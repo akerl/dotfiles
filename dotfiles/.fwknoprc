@@ -1,0 +1,10 @@
+[default]
+
+SPA_SERVER_PORT     465
+USE_GPG             N
+GPG_HOMEDIR         ~/.gnupg
+GPG_SIGNER          personal
+ACCESS              tcp/20
+ALLOW_IP            resolve
+#RESOLVE_URL        http://icanhazip.com
+
