@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ "${#1}" != "8" ] ; then
+	exit
+fi
+ip=""
+for ((a=0; a <= 6 ; a=a+2)) ; do
+	let tmp=0x${1:$a:2}
+	ip+=$tmp
+	ip+="."
+done
+echo ${ip%.}
+
+
