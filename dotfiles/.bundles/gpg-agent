@@ -1,0 +1,26 @@
+# Based on ssh-agent code
+
+local GPG_ENV=$HOME/.gpg-agent
+
+function start_agent {
+  /usr/bin/env gpg-agent --daemon --write-env-file ${GPG_ENV} 2>&1 >/dev/null
+  chmod 600 ${GPG_ENV}
+  . ${GPG_ENV} > /dev/null
+}
+
+# Source GPG agent settings, if applicable
+if [ -f "${GPG_ENV}" ]; then
+  . ${GPG_ENV} > /dev/null
+#  ps -ef | grep ${GPG_AGENT_PID} | grep gpg-agent > /dev/null || {
+  start_agent 2>&1 > /dev/null
+#  }
+else
+  start_agent 2>&1 > /dev/null
+fi
+
+export GPG_AGENT_INFO
+#export SSH_AUTH_SOCK
+#export GPG_AGENT_PID
+
+GPG_TTY=$(tty)
+export GPG_TTY

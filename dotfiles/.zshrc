@@ -4,8 +4,7 @@ if [ "$(uname)" = "Darwin" ]; then
   fpath=(/usr/local/brew/share/zsh-completions $fpath)
   compctl -k "($(hss))" hss
 
-  source ~/Code/Store/antigen/antigen.zsh
-  antigen-bundle akerl/oh-my-zsh plugins/gpg-agent
+  source ~/.bundles/gpg-agent
 
   typeset -A NAMED_DIRS
   NAMED_DIRS=(
@@ -42,12 +41,6 @@ setopt share_history
 alias cld='cd;clear'
 function dv () { [ -n "$VIRTUAL_ENV" ] && deactivate ; }
 
-antigen-bundle kennethreitz/autoenv
-antigen-bundle git
-antigen-bundle pip
-antigen-bundle sprunge
-antigen-apply
-
 for key in ${(k)NAMED_DIRS}
 do
   if [[ -d ${NAMED_DIRS[$key]} ]]; then
@@ -64,5 +57,6 @@ function lsdirs () {
   done
 }
 
-source ~/.zshtheme
+source ~/.bundles/autoenv
+source ~/.bundles/theme
 
