@@ -22,6 +22,9 @@ else
   
 fi
 
+autoload -U compinit
+compinit
+
 CASE_SENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
 
@@ -39,6 +42,10 @@ setopt inc_append_history
 setopt share_history
 
 alias cld='cd;clear'
+
+function pip2-upgrade () { for package in $(pip2 freeze | sed 's/==.*//') ; pip2 install --upgrade $package ; }
+function pip3-upgrade () { for package in $(pip3 freeze | sed 's/==.*//') ; pip3 install --upgrade $package ; }
+
 function dv () { [ -n "$VIRTUAL_ENV" ] && deactivate ; }
 
 for key in ${(k)NAMED_DIRS}
