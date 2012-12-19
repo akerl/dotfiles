@@ -1,8 +1,9 @@
 [default]
 
 SPA_SERVER_PORT     465
-USE_GPG             N
-GPG_HOMEDIR         ~/.gnupg
+USE_GPG             Y
+USE_GPG_AGENT       Y
+GPG_AGENT_INFO      ~/.gpg-agent
 GPG_SIGNER          personal
 ACCESS              tcp/20
 ALLOW_IP            resolve
