@@ -13,7 +13,6 @@ if [ "$(uname)" = "Darwin" ]; then
   
 else
   PATH='/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin'
-  source /opt/system/antigen/antigen.zsh
   
   typeset -A NAMED_DIRS
   NAMED_DIRS=(
