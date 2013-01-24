@@ -40,6 +40,10 @@ setopt hist_verify
 setopt inc_append_history
 setopt share_history
 
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh_cache
+zstyle ':completion:*:functions' ignored-patterns '_*'
+
 alias cld='cd;clear'
 
 function pip2-upgrade () { for package in $(pip2 freeze | sed 's/==.*//') ; pip2 install --upgrade $package ; }
@@ -63,6 +67,7 @@ function lsdirs () {
   done
 }
 
+source ~/.bundles/keybinds
 source ~/.bundles/autoenv
 source ~/.bundles/theme
 
