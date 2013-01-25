@@ -68,6 +68,7 @@ function lsdirs () {
 }
 
 source ~/.bundles/keybinds
+source ~/.bundles/history_search
 source ~/.bundles/autoenv
 source ~/.bundles/theme
 
