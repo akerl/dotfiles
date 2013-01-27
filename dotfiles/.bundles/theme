@@ -1,38 +1,33 @@
 autoload -U colors zsh/terminfo # Used in the colour alias below
 colors
 setopt prompt_subst
-for color in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE; do
-  eval PR_$color='%{$fg[${(L)color}]%}'
-done
-eval PR_NO_COLOR="%{$terminfo[sgr0]%}"
-eval PR_BOLD="%{$terminfo[bold]%}"
 
 # Check the UID
 if [[ $UID -ge 1000 ]]; then # normal user
-  eval PR_USER='${PR_BLUE}%n${PR_NO_COLOR}'
-  eval PR_USER_OP='${PR_BLUE}%#${PR_NO_COLOR}'
-  local PR_PROMPT='$PR_BLUE\$$PR_NO_COLOR'
+  eval PR_USER='%F{blue}%n%f'
+  eval PR_USER_OP='%F{blue}%#%f'
+  local PR_PROMPT='%F{blue}\$%f'
 elif [[ $UID -eq 0 ]]; then # root
-  eval PR_USER='${PR_RED}%n${PR_NO_COLOR}'
-  eval PR_USER_OP='${PR_RED}%#${PR_NO_COLOR}'
-  local PR_PROMPT='$PR_RED#$PR_NO_COLOR'
+  eval PR_USER='%F{red}%n%f'
+  eval PR_USER_OP='%F{red}%#%f'
+  local PR_PROMPT='%F{red}#%f'
 else ; # system user
-  eval PR_USER='${PR_CYAN}%n${PR_NO_COLOR}'
-  eval PR_USER_OP='${PR_CYAN}%#${PR_NO_COLOR}'
-  local PR_PROMPT='$PR_CYAN*$PR_NO_COLOR'
+  eval PR_USER='%F{cyan}%n%f'
+  eval PR_USER_OP='%F{cyan}%#%f'
+  local PR_PROMPT='%F{cyan}*%f'
 fi
 
 # Check if we are on SSH or not
 if [[ -n "$SSH_CLIENT"  ||  -n "$SSH2_CLIENT" || -n "$(tty | grep pts)" ]]; then 
-  eval PR_HOST='${PR_BLUE}%M${PR_NO_COLOR}' #SSH
+  eval PR_HOST='%F{blue}%M%f' #SSH
 else
-  eval PR_HOST='${PR_GREEN}%M${PR_NO_COLOR}' # no SSH
+  eval PR_HOST='%F{green}%M%f' # no SSH
 fi
 
-local return_code="%(?..%{$PR_RED%}(%?%)%{$PR_NO_COLOR%})"
+local return_code="%(?..%F{red}(%?%)%f)"
 
-local user_host='${PR_USER}${PR_CYAN}@${PR_HOST}'
-local current_dir='%{$PR_BOLD$PR_BLUE%}%~%{$PR_NO_COLOR%}'
+local user_host='${PR_USER}%F{cyan}@%f${PR_HOST}'
+local current_dir='%B%F{blue}%~%f%b'
 
 PROMPT="[${user_host}] ${current_dir}
 ::$PR_PROMPT "
