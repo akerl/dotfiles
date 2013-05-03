@@ -44,6 +44,8 @@ zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh_cache
 zstyle ':completion:*:functions' ignored-patterns '_*'
 
+export EDITOR='vim'
+
 alias cld='cd;clear'
 alias atree='tree -a -I ".git"'
 
