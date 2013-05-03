@@ -45,6 +45,7 @@ zstyle ':completion:*' cache-path ~/.zsh_cache
 zstyle ':completion:*:functions' ignored-patterns '_*'
 
 alias cld='cd;clear'
+alias atree='tree -a -I ".git"'
 
 function pip2-upgrade () { for package in $(pip2 freeze | sed 's/==.*//') ; pip2 install --upgrade $package ; }
 function pip3-upgrade () { for package in $(pip3 freeze | sed 's/==.*//') ; pip3 install --upgrade $package ; }

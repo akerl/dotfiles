@@ -19,6 +19,8 @@ if &term=="xterm" || &term=="xterm-color"
      :imap <Esc>OS -
 endif
 
+nmap <f1> :set number! number?<cr>
+
 syntax on
 set number
 set tabstop=4
