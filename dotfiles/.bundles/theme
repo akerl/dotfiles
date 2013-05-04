@@ -33,7 +33,7 @@ zstyle ':vcs_info:git*' actionformats ' %b|%a'
 setopt PROMPT_SUBST
 
 # Only show username if not default
-[ "$USER" != "$DEFAULT_USERNAME" ] && local username='%n@'
+[ "$USER" != "$DEFAULT_USERNAME" ] && local username='%F{red}%n%f@'
 
 # Fastest possible way to check if repo is dirty
 git_dirty() {
@@ -41,6 +41,17 @@ git_dirty() {
     command git rev-parse --is-inside-work-tree &>/dev/null || return
     # check if it's dirty
     command git diff --quiet --ignore-submodules HEAD &>/dev/null; [ $? -eq 1 ] && echo '*'
+}
+
+git_info() {
+    if [[ -z "$vcs_info_msg_0_" ]] ; then
+        return
+    elif [[ "$vcs_info_msg_0_" == " master" ]] ; then
+        echo -n "%F{202} ()"
+    else
+        echo -n "%F{202}${vcs_info_msg_0_}"
+    fi
+    echo "%F{226}$(git_dirty)"
 }
 
 get_host() {
@@ -74,7 +85,7 @@ preexec() {
 precmd() {
     vcs_info
     # Add `%*` to display the time
-    print -P '%F{blue}%~%F{236}$vcs_info_msg_0_`git_dirty` ${username}`get_host` %f %F{yellow}`cmd_exec_time`%f'
+    print -P '%F{blue}%~`git_info` ${username}`get_host` %f %F{yellow}`cmd_exec_time`%f'
     # Reset value since `preexec` isn't always triggered
     unset cmd_timestamp
 }
