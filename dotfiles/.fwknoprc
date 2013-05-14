@@ -5,7 +5,7 @@ USE_GPG             Y
 USE_GPG_AGENT       Y
 GPG_AGENT_INFO      ~/.gpg-agent
 GPG_SIGNER          personal
-ACCESS              tcp/20
+ACCESS              tcp/22
 ALLOW_IP            resolve
 #RESOLVE_URL        http://icanhazip.com
 
