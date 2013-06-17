@@ -9,3 +9,15 @@ ACCESS              tcp/20
 ALLOW_IP            resolve
 #RESOLVE_URL        http://icanhazip.com
 
+[miro]
+GPG_RECIPIENT       miro
+SPA_SERVER          69.164.217.166
+
+[grego]
+GPG_RECIPIENT       grego
+SPA_SERVER          50.116.33.15
+
+[olhado]
+GPG_RECIPIENT       olhado
+SPA_SERVER          173.255.193.119
+
