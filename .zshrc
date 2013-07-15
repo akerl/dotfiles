@@ -1,24 +1,22 @@
 if [ "$(uname)" = "Darwin" ]; then
-  PATH='/usr/local/bin:/usr/local/sbin:/usr/local/brew/bin:/usr/local/brew/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/X11/bin'
+    PATH='/usr/local/bin:/usr/local/sbin:/usr/local/brew/bin:/usr/local/brew/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/X11/bin'
 
-  fpath=(/usr/local/brew/share/zsh-completions /usr/local/brew/Cellar/zsh/5.0.2/share/zsh/functions /usr/local/brew/share/zsh/site-functions)
-  compctl -k "($(hss))" hss
+    fpath=(/usr/local/brew/share/zsh-completions /usr/local/brew/Cellar/zsh/5.0.2/share/zsh/functions /usr/local/brew/share/zsh/site-functions)
+    compctl -k "($(hss))" hss
 
-  source ~/.bundles/gpg-agent
+    source ~/.bundles/gpg-agent
 
-  typeset -A NAMED_DIRS
-  NAMED_DIRS=(
-  code    ~/Code
-  )
-  
+    typeset -A NAMED_DIRS
+    NAMED_DIRS=(
+        code    ~/Code
+    )
 else
-  PATH='/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin'
-  
-  typeset -A NAMED_DIRS
-  NAMED_DIRS=(
-  opt    /opt
-  )
-  
+    PATH='/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin'
+
+    typeset -A NAMED_DIRS
+    NAMED_DIRS=(
+        opt    /opt
+    )
 fi
 
 autoload -U compinit
@@ -54,20 +52,25 @@ function pip3-upgrade () { for package in $(pip3 freeze | sed 's/==.*//') ; pip3
 
 function dv () { [ -n "$VIRTUAL_ENV" ] && deactivate ; }
 
-for key in ${(k)NAMED_DIRS}
-do
-  if [[ -d ${NAMED_DIRS[$key]} ]]; then
-      export $key=${NAMED_DIRS[$key]}
-  else
-      unset "NAMED_DIRS[$key]"
-  fi
+for key in ${(k)NAMED_DIRS} ; do
+    if [[ -d ${NAMED_DIRS[$key]} ]]; then
+        export $key=${NAMED_DIRS[$key]}
+    else
+        unset "NAMED_DIRS[$key]"
+    fi
 done
 
 function lsdirs () {
-  for key in ${(k)NAMED_DIRS}
-  do
-      printf "%-10s %s\n" $key  ${NAMED_DIRS[$key]}
-  done
+    for key in ${(k)NAMED_DIRS} ; do
+        printf "%-10s %s\n" $key  ${NAMED_DIRS[$key]}
+    done
+}
+
+function ssh-reagent () {
+    for agent in $(find /tmp/ssh* -mindepth 1) ; do
+        export SSH_AUTH_SOCK=$agent
+        ssh-add -l 2>&1 > /dev/null && return
+    done
 }
 
 source ~/.bundles/keybinds
