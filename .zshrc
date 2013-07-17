@@ -2,7 +2,12 @@ if [ "$(uname)" = "Darwin" ]; then
     PATH='/usr/local/bin:/usr/local/sbin:/usr/local/brew/bin:/usr/local/brew/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/X11/bin'
 
     fpath=(/usr/local/brew/share/zsh-completions /usr/local/brew/Cellar/zsh/5.0.2/share/zsh/functions /usr/local/brew/share/zsh/site-functions)
-    compctl -k "($(hss))" hss
+
+    compctl -k "($(awk '/GPG_RECIP/ {print $2}' ~/.fwknoprc))" c
+    function c () {
+        ls ~/.ssh/sockets/* | grep $1 >/dev/null || fwknop -n $1
+        ssh $1
+    }
 
     source ~/.bundles/gpg-agent
 
