@@ -5,7 +5,7 @@ if [ "$(uname)" = "Darwin" ]; then
 
     compctl -k "($(awk '/GPG_RECIP/ {print $2}' ~/.fwknoprc))" c
     function c () {
-        ls ~/.ssh/sockets/* | grep $1 >/dev/null || fwknop -n $1
+        ls ~/.ssh/sockets/ 2>/dev/null | grep $1 &>/dev/null || fwknop -n $1
         ssh $1
     }
 
