@@ -1,5 +1,5 @@
 if [ "$(uname)" = "Darwin" ]; then
-    PATH='/usr/local/bin:/usr/local/sbin:/usr/local/brew/bin:/usr/local/brew/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/X11/bin'
+    PATH='/usr/local/bin:/usr/local/sbin:/usr/local/brew/opt/ruby/bin/:/usr/local/brew/bin:/usr/local/brew/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/X11/bin'
 
     fpath=(/usr/local/brew/share/zsh-completions /usr/local/brew/Cellar/zsh/5.0.2/share/zsh/functions /usr/local/brew/share/zsh/site-functions)
 
@@ -10,6 +10,8 @@ if [ "$(uname)" = "Darwin" ]; then
     }
 
     source ~/.bundles/gpg-agent
+
+    alias l='HSS_CONFIG=~/.lhss.yml hss'
 
     typeset -A NAMED_DIRS
     NAMED_DIRS=(
