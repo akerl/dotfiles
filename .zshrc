@@ -4,14 +4,11 @@ if [ "$(uname)" = "Darwin" ]; then
     fpath=(/usr/local/brew/share/zsh-completions /usr/local/brew/Cellar/zsh/5.0.2/share/zsh/functions /usr/local/brew/share/zsh/site-functions)
 
     compctl -k "($(awk '/GPG_RECIP/ {print $2}' ~/.fwknoprc))" c
-    function c () {
-        ls ~/.ssh/sockets/ 2>/dev/null | grep $1 &>/dev/null || fwknop -n $1
-        ssh $1
-    }
 
     source ~/.bundles/gpg-agent
 
     alias l='HSS_CONFIG=~/.lhss.yml hss'
+    alias c='hss'
 
     typeset -A NAMED_DIRS
     NAMED_DIRS=(
