@@ -1,0 +1,20 @@
+---
+patterns:
+    -   note: cluster
+        example: miro -> -p 20 akerl@miro.a-rwx.org
+        short: '^([mgo])$'
+        long: '#{shortcut("fwknop_$1")} -p 20 -A -oTCPKeepAlive=no -oAddressFamily=inet #{shortcut("signed")} #{expand($1)}.a-rwx.org'
+expansions:
+    miro:
+        - m
+    olhado:
+        - o
+    grego:
+        - g
+shortcuts:
+    signed: '-oUserKnownHostsFile=~/.ssh/known_hosts_signed'
+    fwknop_m: '$(ls ~/.ssh/sockets/ | grep miro &>/dev/null || fwknop -n miro >/dev/null)'
+    fwknop_o: '$(ls ~/.ssh/sockets/ | grep olhado &>/dev/null || fwknop -n olhado >/dev/null)'
+    fwknop_g: '$(ls ~/.ssh/sockets/ | grep grego &>/dev/null || fwknop -n grego >/dev/null)'
+...
+
