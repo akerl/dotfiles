@@ -3,7 +3,7 @@ patterns:
     -   note: cluster
         example: miro -> -p 20 akerl@miro.a-rwx.org
         short: '^([mgo])$'
-        long: '#{shortcut("fwknop_$1")} -p 20 -A -oTCPKeepAlive=no -oAddressFamily=inet #{shortcut("signed")} #{expand($1)}.a-rwx.org'
+        long: '#{shortcut("fwknop_#$1")} -p 20 -A -oTCPKeepAlive=no -oAddressFamily=inet #{shortcut("signed")} #{expand($1)}.a-rwx.org'
 expansions:
     miro:
         - m
