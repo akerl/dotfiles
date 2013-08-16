@@ -9,6 +9,8 @@ if [ "$(uname)" = "Darwin" ]; then
 
     alias l='HSS_CONFIG=~/.lhss.yml hss'
     alias c='hss'
+    alias lcp='scp -S l $@'
+    alias ccp='scp -S c $@'
 
     typeset -A NAMED_DIRS
     NAMED_DIRS=(
