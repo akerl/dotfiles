@@ -33,4 +33,5 @@ source ~/.bundles/history_search
 source ~/.bundles/helpers
 source ~/.bundles/autoenv
 source ~/.bundles/theme
+source ~/.bundles/marks
 
