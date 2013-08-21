@@ -1,0 +1,4 @@
+#compdef jump unmark j um
+
+_arguments "1: :($(lsmarks | awk '{print $1}'))"
+

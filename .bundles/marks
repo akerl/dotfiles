@@ -15,7 +15,7 @@ function jump {
 function mark {
     newpath="$(pwd)"
     if [ -z "$1" ] ; then
-        name="$(basename $(newpath))"
+        name="$(basename $newpath)"
     else
         name="$1"
     fi
