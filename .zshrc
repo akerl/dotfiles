@@ -1,28 +1,7 @@
 if [ "$(uname)" = "Darwin" ]; then
-    PATH='/usr/local/bin:/usr/local/sbin:/usr/local/brew/opt/ruby/bin/:/usr/local/brew/bin:/usr/local/brew/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/X11/bin'
-
-    fpath=(/usr/local/brew/share/zsh-completions /usr/local/brew/Cellar/zsh/5.0.2/share/zsh/functions /usr/local/brew/share/zsh/site-functions)
-
-    compctl -k "($(awk '/GPG_RECIP/ {print $2}' ~/.fwknoprc))" c
-
-    source ~/.bundles/gpg-agent
-
-    alias l='HSS_CONFIG=~/.lhss.yml hss'
-    alias c='hss'
-    alias lcp='scp -S l $@'
-    alias ccp='scp -S c $@'
-
-    typeset -A NAMED_DIRS
-    NAMED_DIRS=(
-        code    ~/Code
-    )
+    source ~/.bundles/mac
 else
-    PATH='/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin'
-
-    typeset -A NAMED_DIRS
-    NAMED_DIRS=(
-        opt    /opt
-    )
+    source ~/.bundles/linux
 fi
 
 autoload -U compinit
@@ -49,38 +28,9 @@ zstyle ':completion:*' cache-path ~/.zsh_cache
 zstyle ':completion:*:functions' ignored-patterns '_*'
 
 export EDITOR='vim'
-
-alias cld='cd;clear'
-alias atree='tree -a -I ".git"'
-
-function pip2-upgrade () { for package in $(pip2 freeze | sed 's/==.*//') ; pip2 install --upgrade $package ; }
-function pip3-upgrade () { for package in $(pip3 freeze | sed 's/==.*//') ; pip3 install --upgrade $package ; }
-
-function dv () { [ -n "$VIRTUAL_ENV" ] && deactivate ; }
-
-for key in ${(k)NAMED_DIRS} ; do
-    if [[ -d ${NAMED_DIRS[$key]} ]]; then
-        export $key=${NAMED_DIRS[$key]}
-    else
-        unset "NAMED_DIRS[$key]"
-    fi
-done
-
-function lsdirs () {
-    for key in ${(k)NAMED_DIRS} ; do
-        printf "%-10s %s\n" $key  ${NAMED_DIRS[$key]}
-    done
-}
-
-function ssh-reagent () {
-    for agent in $(find /tmp/ssh* -mindepth 1) ; do
-        export SSH_AUTH_SOCK=$agent
-        ssh-add -l 2>&1 > /dev/null && return
-    done
-}
-
 source ~/.bundles/keybinds
 source ~/.bundles/history_search
+source ~/.bundles/helpers
 source ~/.bundles/autoenv
 source ~/.bundles/theme
 

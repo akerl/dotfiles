@@ -1,0 +1,11 @@
+PATH='/usr/local/bin:/usr/local/sbin:/usr/local/brew/opt/ruby/bin/:/usr/local/brew/bin:/usr/local/brew/sbin:/usr/bin:/usr/sbin:/bin:/sbin'
+
+fpath=(~/.completions /usr/local/brew/share/zsh-completions $fpath)
+
+source ~/.bundles/gpg-agent
+
+alias l='HSS_CONFIG=~/.lhss.yml hss'
+alias c='hss'
+alias lcp='scp -S l $@'
+alias ccp='scp -S c $@'
+
