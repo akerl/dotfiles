@@ -25,7 +25,7 @@ function mark {
         echo "You already have a mark for this path:"
         lsmarks | grep "$newpath\$"
     else
-        ln -vs "$newpath" "$MARKPATH/$1" | sed "s|^$MARKPATH/||"
+        ln -vs "$newpath" "$MARKPATH/$name" | sed "s|^$MARKPATH/||"
     fi
 }
 
