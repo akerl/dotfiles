@@ -29,4 +29,19 @@ set shiftwidth=4
 set expandtab
 
 set nocompatible               " be iMproved
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+filetype plugin indent on
+
+Bundle 'gmarik/vundle'
+Bundle 'bling/vim-airline'
+Bundle 'vim-scripts/taglist'
+Bundle 'scrooloose/nerdtree'
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
+
+let g:airline_powerline_fonts = 1
+set laststatus=2
 
