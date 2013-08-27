@@ -6,6 +6,6 @@ source ~/.bundles/gpg-agent
 
 alias l='HSS_CONFIG=~/.lhss.yml hss'
 alias c='hss'
-alias lcp='scp -S l $@'
-alias ccp='scp -S c $@'
+alias lcp="HSS_CONFIG=~/.lhss.yml scp -S hss $@"
+alias ccp='scp -S hss $@'
 
