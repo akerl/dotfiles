@@ -4,8 +4,8 @@ fpath=(~/.completions /usr/local/brew/share/zsh-completions /usr/local/brew/shar
 
 source ~/.bundles/gpg-agent
 
-alias l='HSS_CONFIG=~/.lhss.yml hss'
 alias c='hss'
-alias lcp='scp -S l $@'
 alias ccp='scp -S c $@'
+
+[ -e ~/.bundles/priv ] && source ~/.bundles/priv
 
