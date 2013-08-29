@@ -7,5 +7,7 @@ source ~/.bundles/gpg-agent
 alias c='hss'
 alias ccp='scp -S hss $@'
 
+alias g='gist -s -c'
+
 [ -e ~/.bundles/priv ] && source ~/.bundles/priv
 
