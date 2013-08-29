@@ -1,6 +1,6 @@
 PATH='/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin'
 
-alias g='gist -s'
+alias g='gist'
 
 fpath=(~/.completions $fpath)
 
