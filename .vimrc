@@ -19,24 +19,47 @@ if &term=="xterm" || &term=="xterm-color"
      :imap <Esc>OS -
 endif
 
-nmap <f1> :set number! number?<cr>
+nnoremap <F1> :set number! number?<cr>
+inoremap <F1> <C-O>:set number! number?<cr>
+
+nnoremap <F2> :set invpaste paste?<cr>
+set pastetoggle=<F2>
+set showmode
+
+nnoremap ; :
+
+set backspace=indent,eol,start
+
+set modelines=0
 
 syntax on
 set number
+
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
+set smarttab
+set autoindent
+set smartindent
+
+set ttyfast
 
 set nocompatible               " be iMproved
-filetype off                   " required!
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-filetype plugin indent on
 
 Bundle 'gmarik/vundle'
+Bundle 'bling/vim-airline'
+Bundle 'vim-scripts/taglist'
+Bundle 'scrooloose/nerdtree'
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
+
+filetype plugin indent on
 
 let g:airline_powerline_fonts = 1
 set laststatus=2
+
 
