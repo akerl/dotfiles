@@ -1,0 +1,4 @@
+#compdef kill_socket sk
+
+_describe 'sockets' "($(list_sockets | sed 's/^\([^:]*\):\([^:]*\)$/"\1\\:\2"/'))"
+

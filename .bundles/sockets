@@ -1,0 +1,23 @@
+export SOCKPATH="$HOME/.ssh/sockets"
+mkdir -p "$SOCKPATH"
+
+function kill_socket {
+    if [ -z "$1" ] ; then
+        echo 'Please specify a socket to remove:'
+        list_sockets
+    elif [ -e "$SOCKPATH/$1" ] ; then
+        echo "Closing $1"
+        rm "$SOCKPATH/$1"
+    else
+        echo 'That socket does not exist'
+    fi
+}
+
+function list_sockets {
+    ls -1 "$SOCKPATH"
+}
+
+
+alias sk='kill_socket'
+alias sl='list_sockets'
+
