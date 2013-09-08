@@ -62,4 +62,9 @@ filetype plugin indent on
 let g:airline_powerline_fonts = 1
 set laststatus=2
 
+set background=dark
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+colorscheme solarized
+highlight Visual ctermbg=Black ctermfg=Cyan
 
