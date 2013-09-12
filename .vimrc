@@ -19,6 +19,10 @@ if &term=="xterm" || &term=="xterm-color"
      :imap <Esc>OS -
 endif
 
+nnoremap <F3> :set list!<CR>
+inoremap <F1> <C-O>:set number! number?<cr>
+set listchars=tab:▸\ ,eol:¬
+
 nnoremap <F1> :set number! number?<cr>
 inoremap <F1> <C-O>:set number! number?<cr>
 
