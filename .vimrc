@@ -19,8 +19,21 @@ if &term=="xterm" || &term=="xterm-color"
      :imap <Esc>OS -
 endif
 
-nnoremap <F3> :set list!<CR>
-inoremap <F1> <C-O>:set number! number?<cr>
+function! Preserve(command)
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " Do the business:
+  execute a:command
+  " Clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
+endfunction
+
+nnoremap <silent> <leader>w :call Preserve("%s/\\s\\+$//e")<CR>
+
+nnoremap <leader>t :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
 nnoremap <F1> :set number! number?<cr>
@@ -61,7 +74,9 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 
-filetype plugin indent on
+filetype on
+
+autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
 
 let g:airline_powerline_fonts = 1
 set laststatus=2
