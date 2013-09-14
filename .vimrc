@@ -31,6 +31,12 @@ function! Preserve(command)
   call cursor(l, c)
 endfunction
 
+let mapleader = "'"
+
+nnoremap <leader>. :bn<CR>
+nnoremap <leader>, :bp<CR>
+nnoremap <leader>/ <C-^>
+
 nnoremap <silent> <leader>w :call Preserve("%s/\\s\\+$//e")<CR>
 
 nnoremap <leader>t :set list!<CR>
@@ -61,6 +67,8 @@ set autoindent
 set smartindent
 
 set ttyfast
+
+set hidden
 
 set nocompatible               " be iMproved
 
