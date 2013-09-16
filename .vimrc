@@ -33,13 +33,28 @@ endfunction
 
 let mapleader = "'"
 
+nnoremap <leader>[ gT
+nnoremap <leader>] gt
+nnoremap <leader>1 1gt
+nnoremap <leader>2 2gt
+nnoremap <leader>3 3gt
+nnoremap <leader>4 4gt
+nnoremap <leader>5 5gt
+nnoremap <leader>6 6gt
+nnoremap <leader>7 7gt
+nnoremap <leader>8 8gt
+nnoremap <leader>9 9gt
+nnoremap <leader>0 :tablast<CR>
+cnoreabbrev t tabedit
+nnoremap <leader>t :tabedit 
+
 nnoremap <leader>. :bn<CR>
 nnoremap <leader>, :bp<CR>
 nnoremap <leader>/ <C-^>
 
 nnoremap <silent> <leader>w :call Preserve("%s/\\s\\+$//e")<CR>
 
-nnoremap <leader>t :set list!<CR>
+nnoremap <leader>e :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
 nnoremap <F1> :set number! number?<cr>
