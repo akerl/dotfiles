@@ -92,12 +92,14 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'bling/vim-airline'
-Bundle 'vim-scripts/taglist'
+Bundle 'vim-scripts/taglist.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 
-filetype on
+let g:vundle_default_git_proto = "git"
+
+filetype plugin indent on
 
 autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
 
