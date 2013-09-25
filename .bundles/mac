@@ -7,5 +7,8 @@ alias ccp='scp -S hss'
 
 alias g='gist -c'
 
-[ -e ~/.bundles/priv ] && source ~/.bundles/priv
+alias gpom='git push origin master'
+alias gppm='git push public master'
+alias gpam='git push public master ; git push origin master'
 
+[ -e ~/.bundles/priv ] && source ~/.bundles/priv
