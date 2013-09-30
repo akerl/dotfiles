@@ -1,6 +1,7 @@
-fpath=(~/.completions /usr/local/brew/share/zsh-completions /usr/local/brew/share/zsh/functions /usr/local/brew/share/zsh/site-functions /usr/local/brew/Cellar/rbenv/0.4.0/completions/rbenv.zsh)
+fpath=(~/.completions /usr/local/brew/share/zsh-completions /usr/local/brew/share/zsh/functions /usr/local/brew/share/zsh/site-functions)
 
 source ~/.bundles/gpg-agent
+source ~/.bundles/rbenv
 
 alias c='hss'
 alias ccp='scp -S hss'
