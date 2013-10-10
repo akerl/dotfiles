@@ -22,6 +22,10 @@ setopt hist_ignore_space
 setopt hist_verify
 setopt inc_append_history
 setopt share_history
+setopt extended_glob
+setopt glob_dots
+setopt short_loops
+setopt autocd
 
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh_cache
