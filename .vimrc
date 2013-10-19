@@ -103,6 +103,8 @@ filetype plugin indent on
 
 autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
 
+map <C-n> :NERDTreeToggle<CR>
+
 let g:airline_powerline_fonts = 1
 set laststatus=2
 

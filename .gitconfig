@@ -1,10 +1,10 @@
 [push]
-	default = simple
+    default = simple
 [user]
-	name = Les Aker
-	email = me@lesaker.org
+    name = Les Aker
+    email = me@lesaker.org
 [color]
-  ui = true
+    ui = true
 
 [help]
-	autocorrect = 1
+    autocorrect = 1
