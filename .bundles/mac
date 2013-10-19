@@ -12,4 +12,6 @@ alias gpom='git push origin master'
 alias gppm='git push public master'
 alias gpam='git push public master ; git push origin master'
 
+export SSL_CERT_FILE=/usr/local/brew/opt/curl-ca-bundle/share/ca-bundle.crt
+
 [ -e ~/.bundles/priv ] && source ~/.bundles/priv
