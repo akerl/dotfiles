@@ -10,7 +10,7 @@ function start_agent {
   . ${GPG_ENV} > /dev/null
 }
 
-lockfile $HOME/.gpg-agent-lock
+lockfile -1 $HOME/.gpg-agent-lock
 
 if [ -f "${GPG_ENV}" ]; then
   . ${GPG_ENV} > /dev/null
