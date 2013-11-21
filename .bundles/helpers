@@ -1,7 +1,7 @@
 alias cld='cd;clear'
 alias atree='tree -a -I ".git"'
 alias ta='tmux attach -d'
-alias ls='ls -G'
+alias ls='ls --color'
 alias ddd='~/.../... update && ~/.../... install'
 
 function pip2-upgrade () { for package in $(pip2 freeze | sed 's/==.*//') ; pip2 install --upgrade $package ; }
