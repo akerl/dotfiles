@@ -1,3 +1,5 @@
+alias ls='ls --color'
+
 alias g='gist'
 alias s='systemctl'
 

@@ -3,6 +3,8 @@ fpath=(~/.completions /usr/local/brew/share/zsh-completions /usr/local/brew/shar
 source ~/.bundles/gpg-agent
 source ~/.bundles/rbenv
 
+alias ls='ls -G'
+
 alias c='hss'
 alias ccp='scp -S hss'
 
