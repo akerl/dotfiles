@@ -81,8 +81,8 @@ set smarttab
 set autoindent
 set smartindent
 
-set backupdir=./.vim/swap
-set directory=./.vim/swap
+set backupdir=~/.vim/swap
+set directory=~/.vim/swap
 
 set ttyfast
 
