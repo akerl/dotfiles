@@ -1,7 +1,5 @@
 source "/usr/local/brew/Cellar/rbenv/0.4.0/completions/rbenv.zsh"
 
-lockfile -0 ~/.rbenv-lock
-
 rbenv rehash
 
 rbenv() {
@@ -18,6 +16,4 @@ rbenv() {
     command rbenv "$command" "$@";;
   esac
 }
-
-rm -f ~/.rbenv-lock
 

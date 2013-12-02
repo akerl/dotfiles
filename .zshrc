@@ -1,3 +1,5 @@
+lockfile -1 $HOME/.zshrc-lock
+
 if [ "$(uname)" = "Darwin" ]; then
     source ~/.bundles/mac
 else
@@ -40,3 +42,4 @@ source ~/.bundles/theme
 source ~/.bundles/marks
 source ~/.bundles/sockets
 
+rm -f $HOME/.zshrc-lock

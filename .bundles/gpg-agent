@@ -10,8 +10,6 @@ function start_agent {
   . ${GPG_ENV} > /dev/null
 }
 
-lockfile -1 $HOME/.gpg-agent-lock
-
 if [ -f "${GPG_ENV}" ]; then
   . ${GPG_ENV} > /dev/null
   ps aux | grep "${GPG_AGENT_PID}.*[g]pg-agent" > /dev/null || {
@@ -26,6 +24,4 @@ export GPG_AGENT_PID
 
 GPG_TTY=$(tty)
 export GPG_TTY
-
-rm -f $HOME/.gpg-agent-lock
 
