@@ -1,7 +1,9 @@
 fpath=(~/.completions /usr/local/brew/share/zsh-completions /usr/local/brew/share/zsh/functions /usr/local/brew/share/zsh/site-functions)
 
+lockfile -1 ~/.zshrc-lock
 source ~/.bundles/gpg-agent
 source ~/.bundles/rbenv
+rm -f ~/.zshrc-lock
 
 alias ls='ls -G'
 
