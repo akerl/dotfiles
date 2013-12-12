@@ -99,7 +99,6 @@ Bundle 'vim-scripts/taglist.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
-Bundle 'tpope/vim-markdown'
 
 let g:vundle_default_git_proto = "git"
 
