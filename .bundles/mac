@@ -12,6 +12,8 @@ alias ccp='scp -S hss'
 
 alias g='gist -c'
 
+alias s='ssh'
+
 alias gpom='git push origin master'
 alias gppm='git push public master'
 alias gpam='git push public master ; git push origin master'
