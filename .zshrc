@@ -39,4 +39,5 @@ source ~/.bundles/autoenv
 source ~/.bundles/theme
 source ~/.bundles/marks
 source ~/.bundles/sockets
+[ -e ~/.bundles/priv ] && source ~/.bundles/priv
 
