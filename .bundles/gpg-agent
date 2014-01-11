@@ -5,7 +5,7 @@ local GPG_ENV=$HOME/.gpg-agent
 function start_agent {
   /usr/bin/env gpg-agent --daemon --no-use-standard-socket --write-env-file ${GPG_ENV} &> /dev/null
   chmod 600 ${GPG_ENV}
-  GPG_AGENT_PID="$(ps aux | awk '/[g]pg-agent --daemon/ { print $2 }')"
+  GPG_AGENT_PID="$(ps aux | awk '/ [g]pg-agent --daemon/ { print $2 }')"
   echo "GPG_AGENT_PID=$GPG_AGENT_PID" >> ${GPG_ENV}
   . ${GPG_ENV} > /dev/null
 }
