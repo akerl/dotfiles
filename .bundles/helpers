@@ -2,6 +2,7 @@ alias cld='cd;clear'
 alias atree='tree -a -I ".git"'
 alias ta='tmux attach -d'
 alias ddd='~/.../... update && ~/.../... install'
+alias v=vim
 
 alias gs='git status'
 alias gd='git diff'
