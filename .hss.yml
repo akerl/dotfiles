@@ -12,7 +12,7 @@ expansions:
     grego:
         - g
 shortcuts:
-    signed: '-oUserKnownHostsFile=~/.ssh/known_hosts_signed'
+    signed: '-oUserKnownHostsFile=/dev/null -oStrictHostKeyChecking=no'
     fwknop_m: '$(ls ~/.ssh/sockets/ | grep miro &>/dev/null || fwknop -n miro >/dev/null)'
     fwknop_o: '$(ls ~/.ssh/sockets/ | grep olhado &>/dev/null || fwknop -n olhado >/dev/null)'
     fwknop_g: '$(ls ~/.ssh/sockets/ | grep grego &>/dev/null || fwknop -n grego >/dev/null)'
