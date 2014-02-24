@@ -64,9 +64,9 @@ get_host() {
 
 prompt_char() {
     if [ $UID -eq 0 ] ; then
-        echo '❯❯'
+        echo '->>'
     else
-        echo '❯'
+        echo '>'
     fi
 }
 
