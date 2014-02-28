@@ -9,6 +9,7 @@ alias ls='ls -G'
 
 alias c='hss'
 alias ccp='scp -S hss'
+export HSS_PASS='ssh'
 
 alias g='gist -c'
 
