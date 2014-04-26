@@ -1,9 +1,13 @@
 ---
 patterns:
     -   note: cluster
-        example: miro -> -p 20 akerl@miro.a-rwx.org
+        example: m -> akerl@miro.a-rwx.org -p20 (guest)
         short: '^([mgo])$'
-        long: '#{shortcut("fwknop_#$1")} -p 20 -A -oTCPKeepAlive=no -oAddressFamily=inet #{shortcut("signed")} #{expand($1)}.a-rwx.org'
+        long: '-p20 -A4 -oTCPKeepAlive=no #{shortcut("unsigned")} #{expand($1)}.a-rwx.org'
+    -   note: cluster dock0
+        example: mr -> root@miro.a-rwx.org
+        short: '^([mgo])r$'
+        long: '-A4 -oTCPKeepAlive=no #{shortcut("unsigned")} root@#{expand($1)}.a-rwx.org'
 expansions:
     miro:
         - m
@@ -12,9 +16,6 @@ expansions:
     grego:
         - g
 shortcuts:
-    signed: '-oUserKnownHostsFile=/dev/null -oStrictHostKeyChecking=no'
-    fwknop_m: '$(ls ~/.ssh/sockets/ | grep miro &>/dev/null || fwknop -n miro >/dev/null)'
-    fwknop_o: '$(ls ~/.ssh/sockets/ | grep olhado &>/dev/null || fwknop -n olhado >/dev/null)'
-    fwknop_g: '$(ls ~/.ssh/sockets/ | grep grego &>/dev/null || fwknop -n grego >/dev/null)'
+    unsigned: '-oUserKnownHostsFile=/dev/null -oStrictHostKeyChecking=no'
 ...
 
