@@ -10,6 +10,17 @@ k () {
   # Setup
   # ------------------------------------------------------------------------------------------------------------------------
 
+  # Get original destination if a parameter was given
+  if [ -n "$1" ] ; then
+    if [ -d $1 ] ; then
+      ORIGINAL_DIR="$(pwd)"
+      cd $1
+    else
+      echo 'That directory does not exist'
+      return
+    fi
+  fi
+
   # Stop stat failing when a directory contains either no files or no hidden files
   # Track if we _accidentally_ create a new global variable
   setopt local_options null_glob warn_create_global
@@ -284,6 +295,7 @@ k () {
 
   # cleanup / recovery
   TERM="$OLD_TERM"
+  [[ -n "$ORIGINAL_DIR" ]] && cd $ORIGINAL_DIR
 }
 
 # http://upload.wikimedia.org/wikipedia/en/1/15/Xterm_256color_chart.svg
