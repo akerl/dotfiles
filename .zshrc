@@ -39,6 +39,7 @@ source ~/.bundles/autoenv
 source ~/.bundles/theme
 source ~/.bundles/marks
 source ~/.bundles/sockets
+source ~/.bundles/k
 [ -e ~/.bundles/priv ] && source ~/.bundles/priv
 true
 
