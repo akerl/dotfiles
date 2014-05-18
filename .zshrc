@@ -7,6 +7,8 @@ fi
 autoload -U compinit
 compinit
 
+autoload -U zmv
+
 CASE_SENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
 
