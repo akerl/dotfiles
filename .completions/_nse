@@ -1,4 +1,0 @@
-#compdef nse
-
-_describe 'nse' "($(docker ps | awk '{if (NR!=1) {print $NF}}'))"
-

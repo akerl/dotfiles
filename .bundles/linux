@@ -5,7 +5,7 @@ alias s='systemctl'
 
 fpath=(~/.completions $fpath)
 
-function nse() {
+function ds() {
     if [ -z "$1" ] ; then
         label="$(docker ps | tail -1 | awk '{print $(NF)}')"
     else
