@@ -89,19 +89,19 @@ set ttyfast
 set hidden
 
 set nocompatible               " be iMproved
+filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
-Bundle 'bling/vim-airline'
-Bundle 'vim-scripts/taglist.vim'
-Bundle 'rizzatti/funcoo.vim'
-Bundle 'rizzatti/dash.vim'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'honza/dockerfile.vim'
-
-let g:vundle_default_git_proto = "git"
+Plugin 'gmarik/vundle'
+Plugin 'bling/vim-airline'
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'rizzatti/funcoo.vim'
+Plugin 'rizzatti/dash.vim'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'honza/dockerfile.vim'
+call vundle#end()
 
 filetype plugin indent on
 
