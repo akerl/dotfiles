@@ -99,6 +99,7 @@ Bundle 'vim-scripts/taglist.vim'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'honza/dockerfile.vim'
 
 let g:vundle_default_git_proto = "git"
 
