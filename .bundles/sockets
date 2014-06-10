@@ -20,4 +20,4 @@ function list_sockets {
 
 alias sk='kill_socket'
 alias sl='list_sockets'
-
+alias ska='rm -r ~/.ssh/sockets/*@*'
