@@ -1,34 +1,34 @@
 if &term=="xterm" || &term=="xterm-color"
-     set t_Co=8
-     set t_Sb=^[4%dm
-     set t_Sf=^[3%dm
-     :imap <Esc>Oq 1
-     :imap <Esc>Or 2
-     :imap <Esc>Os 3
-     :imap <Esc>Ot 4
-     :imap <Esc>Ou 5
-     :imap <Esc>Ov 6
-     :imap <Esc>Ow 7
-     :imap <Esc>Ox 8
-     :imap <Esc>Oy 9
-     :imap <Esc>Op 0
-     :imap <Esc>On .
-     :imap <Esc>OQ /
-     :imap <Esc>OR *
-     :imap <Esc>Ol +
-     :imap <Esc>OS -
+    set t_Co=8
+    set t_Sb=^[4%dm
+    set t_Sf=^[3%dm
+    :imap <Esc>Oq 1
+    :imap <Esc>Or 2
+    :imap <Esc>Os 3
+    :imap <Esc>Ot 4
+    :imap <Esc>Ou 5
+    :imap <Esc>Ov 6
+    :imap <Esc>Ow 7
+    :imap <Esc>Ox 8
+    :imap <Esc>Oy 9
+    :imap <Esc>Op 0
+    :imap <Esc>On .
+    :imap <Esc>OQ /
+    :imap <Esc>OR *
+    :imap <Esc>Ol +
+    :imap <Esc>OS -
 endif
 
 function! Preserve(command)
-  " Preparation: save last search, and cursor position.
-  let _s=@/
-  let l = line(".")
-  let c = col(".")
-  " Do the business:
-  execute a:command
-  " Clean up: restore previous search history, and cursor position
-  let @/=_s
-  call cursor(l, c)
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    execute a:command
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
 endfunction
 
 let mapleader = "'"
