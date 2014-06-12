@@ -23,5 +23,5 @@ alias keybase='keybase --homedir /Volumes/akerl-vault'
 
 export SSL_CERT_FILE=/Users/akerl/.sslcerts
 
-GOPATH=$HOME/.go
+export GOPATH=$HOME/.go
 
