@@ -22,6 +22,6 @@ function ds() {
     (
         cd /var/lib/docker/execdriver/native/$pid
         nsinit exec $cmd
-    }
+    )
 }
 
