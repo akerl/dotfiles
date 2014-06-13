@@ -1,4 +1,6 @@
-alias ls='ls --color'
+alias ls='ls --color=auto'
+eval `dircolors -b`
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 alias g='gist'
 alias s='systemctl'
