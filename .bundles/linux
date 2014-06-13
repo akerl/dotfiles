@@ -19,7 +19,9 @@ function ds() {
     else
         cmd="$2"
     fi
-    cd /var/lib/docker/execdriver/native/$pid
-    nsinit exec $cmd
+    (
+        cd /var/lib/docker/execdriver/native/$pid
+        nsinit exec $cmd
+    }
 }
 
