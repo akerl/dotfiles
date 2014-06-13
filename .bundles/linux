@@ -13,12 +13,13 @@ function ds() {
     else
         label="$1"
     fi
-    pid="$(docker inspect --format '{{.State.Pid}}' $label)"
+    pid="$(docker inspect --format '{{.Id}}' $label)"
     if [ -z "$2" ] ; then
         cmd="/bin/bash"
     else
         cmd="$2"
     fi
-    nsenter --mount --uts --ipc --net --pid --target $pid "$cmd"
+    cd /var/lib/docker/execdriver/native/$pid
+    nsinit exec $cmd
 }
 
