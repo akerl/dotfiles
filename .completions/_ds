@@ -1,4 +1,0 @@
-#compdef ds
-
-_describe 'ds' "($(docker ps | awk '{if (NR!=1) {print $NF}}'))"
-

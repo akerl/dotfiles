@@ -5,18 +5,3 @@ alias s='systemctl'
 
 fpath=(~/.completions $fpath)
 
-function ds() {
-    if [ -z "$1" ] ; then
-        label="$(docker ps | tail -1 | awk '{print $(NF)}')"
-    else
-        label="$1"
-    fi
-    pid="$(docker inspect --format '{{.State.Pid}}' $label)"
-    if [ -z "$2" ] ; then
-        cmd="/bin/bash"
-    else
-        cmd="$2"
-    fi
-    nsenter --mount --uts --ipc --net --pid --target $pid "$cmd"
-}
-
