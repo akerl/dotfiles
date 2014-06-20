@@ -5,6 +5,7 @@
     email = me@lesaker.org
 [color]
     ui = true
-
+[merge]
+    ff = only
 [help]
     autocorrect = 1
