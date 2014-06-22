@@ -4,6 +4,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 alias g='gist'
 alias s='systemctl'
+alias d='docker'
 
 fpath=(~/.completions $fpath)
 
