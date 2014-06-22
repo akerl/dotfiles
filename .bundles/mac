@@ -21,7 +21,23 @@ alias gpam='git push public master ; git push origin master'
 
 alias keybase='keybase --homedir /Volumes/akerl-vault'
 
+function hiddenfiles () {
+    current="$(defaults read com.apple.finder AppleShowAllFiles)"
+    if [ "$current" = "0" ] ; then
+        echo "Now showing hidden files"
+        new="true"
+    else
+        echo "Now hiding hidden files"
+        new="false"
+    fi
+    defaults write com.apple.finder AppleShowAllFiles -bool $new
+    killall Finder
+}
+
 export SSL_CERT_FILE=/Users/akerl/.sslcerts
 
 export GOPATH=$HOME/.go
+
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 
