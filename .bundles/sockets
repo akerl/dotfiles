@@ -20,4 +20,4 @@ function list_sockets {
 
 alias sk='kill_socket'
 alias sl='list_sockets'
-alias ska='rm -v "$SOCKPATH/*@*"'
+alias ska='rm -v $SOCKPATH/*@*'
