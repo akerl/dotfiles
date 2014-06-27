@@ -20,4 +20,4 @@ function list_sockets {
 
 alias sk='kill_socket'
 alias sl='list_sockets'
-alias ska='find $SOCKPATH -name "*@*" -delete'
+alias ska='find $SOCKPATH -name "*@*" -print -delete'
