@@ -26,3 +26,5 @@
 [url "git://gist.github.com/"]
     insteadOf = "gist:"
 
+[git-up "fetch"]
+	prune = false
