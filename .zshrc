@@ -1,3 +1,4 @@
+[ -e ~/.bundles/priv ] && source ~/.bundles/priv
 if [ "$(uname)" = "Darwin" ]; then
     source ~/.bundles/mac
 else
