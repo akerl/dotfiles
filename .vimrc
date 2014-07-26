@@ -101,6 +101,10 @@ Plugin 'rizzatti/funcoo.vim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'honza/dockerfile.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'skalnik/vim-vroom'
+Plugin 'tpope/vim-fugitive'
+Plugin 'vim-ruby/vim-ruby'
 call vundle#end()
 
 filetype plugin indent on
