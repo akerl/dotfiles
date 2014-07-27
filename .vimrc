@@ -57,6 +57,8 @@ nmap <silent> <leader><Down> :wincmd j<CR>
 nmap <silent> <leader><Left> :wincmd h<CR>
 nmap <silent> <leader><Right> :wincmd l<CR>
 
+nnoremap <silent> <F8> :TlistToggle<CR>
+
 nnoremap <silent> <leader>w :call Preserve("%s/\\s\\+$//e")<CR>
 
 nnoremap <leader>e :set list!<CR>

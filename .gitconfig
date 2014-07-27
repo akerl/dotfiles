@@ -27,4 +27,7 @@
     insteadOf = "gist:"
 
 [git-up "fetch"]
-	prune = false
+    prune = false
+
+[alias]
+    co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
