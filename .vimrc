@@ -117,8 +117,6 @@ call vundle#begin()
 Plugin 'gmarik/vundle'
 Plugin 'bling/vim-airline'
 Plugin 'vim-scripts/taglist.vim'
-Plugin 'rizzatti/funcoo.vim'
-Plugin 'rizzatti/dash.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'honza/dockerfile.vim'
 Plugin 'kien/ctrlp.vim'
