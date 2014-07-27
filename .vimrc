@@ -46,7 +46,7 @@ nnoremap <leader>8 8gt
 nnoremap <leader>9 9gt
 nnoremap <leader>0 :tablast<CR>
 cnoreabbrev t tabedit
-nnoremap <leader>t :tabedit 
+nnoremap <leader>t :tabedit
 
 nnoremap <leader>. :bn<CR>
 nnoremap <leader>, :bp<CR>
@@ -66,12 +66,25 @@ set showmode
 
 nnoremap ; :
 
+if ! has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=0
+        au InsertLeave * set timeoutlen=1000
+    augroup END
+endif
+
+set number
+set relativenumber
+autocmd InsertEnter * :set norelativenumber
+autocmd InsertLeave * :set relativenumber
+
 set backspace=indent,eol,start
 
 set modelines=0
 
 syntax on
-set number
 
 set tabstop=4
 set softtabstop=4
