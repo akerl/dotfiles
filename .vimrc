@@ -105,6 +105,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'skalnik/vim-vroom'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'scrooloose/nerdtree'
 call vundle#end()
 
 filetype plugin indent on
