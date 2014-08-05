@@ -19,6 +19,7 @@ alias gpom='git push origin master'
 alias gppm='git push public master'
 alias gpam='git push public master ; git push origin master'
 
+alias gpg='gpg --homedir /Volumes/akerl-vault/gnupg'
 alias keybase='keybase --homedir /Volumes/akerl-vault'
 
 function hiddenfiles () {
