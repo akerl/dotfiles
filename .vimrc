@@ -124,6 +124,7 @@ Plugin 'skalnik/vim-vroom'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'scrooloose/nerdtree'
+Plugin 'vim-scripts/DetectIndent'
 call vundle#end()
 
 filetype plugin indent on
@@ -131,6 +132,9 @@ filetype plugin indent on
 autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
 
 map <C-n> :NERDTreeToggle<CR>
+
+let g:detectindent_preferred_expandtab = 1
+let g:detectindent_preferred_indent = 4
 
 let g:airline_powerline_fonts = 1
 set laststatus=2
@@ -144,4 +148,6 @@ highlight Visual ctermbg=Black ctermfg=Cyan
 au BufRead,BufNewFile *.md set filetype=markdown
 
 match ErrorMsg '\%>80v.\+'
+
+autocmd BufReadPost * :DetectIndent
 
