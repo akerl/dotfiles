@@ -150,6 +150,7 @@ highlight Visual ctermbg=Black ctermfg=Cyan
 au BufRead,BufNewFile *.md set filetype=markdown
 
 match ErrorMsg '\%>80v.\+'
+autocmd FileType markdown :match none
 
 autocmd BufReadPost * :DetectIndent
 
