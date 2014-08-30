@@ -64,9 +64,6 @@ nnoremap <silent> <leader>w :call Preserve("%s/\\s\\+$//e")<CR>
 nnoremap <leader>e :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
-nnoremap <F1> :set number! number?<cr>:set relativenumber! relativenumber?<cr>
-inoremap <F1> <C-O>:set number! number?<cr><C-O>:set relativenumber! relativenumber?<cr>
-
 nnoremap <F2> :set invpaste paste?<cr>
 set pastetoggle=<F2>
 set showmode
@@ -83,9 +80,14 @@ if ! has('gui_running')
 endif
 
 set number
-set relativenumber
-autocmd InsertEnter * :set norelativenumber
-autocmd InsertLeave * :set relativenumber
+" set relativenumber
+" autocmd InsertEnter * :set norelativenumber
+" autocmd InsertLeave * :set relativenumber
+nnoremap <F1> :set number! number?<cr>
+inoremap <F1> <C-O>:set number! number?<cr>
+nnoremap <F3> :set relativenumber! relativenumber?<cr>
+inoremap <F3> <C-O>:set relativenumber! relativenumber?<cr>
+
 
 set backspace=indent,eol,start
 
