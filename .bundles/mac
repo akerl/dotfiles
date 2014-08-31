@@ -5,6 +5,8 @@ source ~/.bundles/gpg-agent
 source ~/.bundles/rbenv
 rm -f ~/.zshrc-lock
 
+alias sha512sum='shasum -a 512'
+alias sha256sum='shasum -a 256'
 alias ls='ls -G'
 
 alias c='hss'
