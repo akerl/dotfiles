@@ -1,4 +1,4 @@
-fpath=(~/.completions /usr/local/brew/share/zsh-completions /usr/local/brew/share/zsh/functions /usr/local/brew/share/zsh/site-functions)
+fpath=(~/.completions /opt/boxen/homebrew/share/zsh-completions /opt/boxen/homebrew/share/zsh/functions /opt/boxen/homebrew/share/zsh/site-functions)
 
 lockfile -1 -r5 ~/.zshrc-lock
 source ~/.bundles/gpg-agent
