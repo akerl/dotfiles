@@ -3,6 +3,7 @@ if [ "$(uname)" = "Darwin" ] ; then
     PATH="$PATH:/usr/local/bin:/usr/local/sbin"
     PATH="$PATH:/usr/bin:/usr/sbin:/bin:/sbin"
     if [ -e /usr/local/brew ] ; then
+        PATH="$HOME/.rbenv/shims/:$PATH"
         PATH="/usr/local/brew/bin:/usr/local/brew/sbin:$PATH"
     fi
 elif [ -e /etc/arch-release ] ; then
