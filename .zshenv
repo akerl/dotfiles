@@ -2,6 +2,9 @@ if [ "$(uname)" = "Darwin" ] ; then
     PATH="$HOME/.bin"
     PATH="$PATH:/usr/local/bin:/usr/local/sbin"
     PATH="$PATH:/usr/bin:/usr/sbin:/bin:/sbin"
+    if [ -e /usr/local/brew ] ; then
+        PATH="/usr/local/brew/bin:/usr/local/brew/sbin:$PATH"
+    fi
 elif [ -e /etc/arch-release ] ; then
     PATH="$HOME/.bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl"
 else
