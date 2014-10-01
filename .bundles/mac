@@ -40,7 +40,7 @@ function hiddenfiles () {
     killall Finder
 }
 
-export SSL_CERT_FILE=/Users/akerl/.sslcerts
+#export SSL_CERT_FILE=/Users/akerl/.sslcerts
 
 export GOPATH=$HOME/.go
 
