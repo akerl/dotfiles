@@ -147,6 +147,9 @@ let g:solarized_termtrans=1
 colorscheme solarized
 highlight Visual ctermbg=Black ctermfg=Cyan
 
+syntax match Tab /\t/
+highlight Tab gui=underline guifg=blue ctermbg=blue
+
 au BufRead,BufNewFile *.md set filetype=markdown
 
 match ErrorMsg '\%>80v.\+'
