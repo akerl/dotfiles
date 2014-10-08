@@ -3,7 +3,7 @@ patterns:
     -   note: cluster
         example: m -> akerl@miro.a-rwx.org -p20 (guest)
         short: '^([mgoeq])$'
-        long: '-p20 -A4 -oTCPKeepAlive=no #{shortcut("unsigned")} #{expand($1)}.a-rwx.org'
+        long: '-p20 -A4 -oTCPKeepAlive=no #{shortcut("unsigned")} akerl@#{expand($1)}.a-rwx.org'
     -   note: cluster dock0
         example: mr -> root@miro.a-rwx.org
         short: '^([mgoeq])r$'
