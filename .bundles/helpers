@@ -13,6 +13,7 @@ alias gr='git remote -v'
 alias gl='git log'
 alias gsu='git submodule foreach git pull origin master'
 alias gsi='git submodule update --init'
+alias gpr='git pull --rebase'
 
 alias map="xargs -n1"
 alias mapp="xargs -n1 -I{}"
