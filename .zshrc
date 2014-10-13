@@ -44,5 +44,6 @@ source ~/.bundles/marks
 source ~/.bundles/sockets
 source ~/.bundles/k
 [ -e ~/.bundles/priv ] && source ~/.bundles/priv
+[ -e ~/.bundles/work ] && source ~/.bundles/work
 true
 
