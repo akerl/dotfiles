@@ -3,6 +3,7 @@ alias atree='tree -a -I ".git"'
 alias ta='tmux attach -d'
 alias ddd='~/.../... update && ~/.../... install'
 alias v=vim
+alias l='ls -la'
 
 alias gs='git status'
 alias gd='git diff'
