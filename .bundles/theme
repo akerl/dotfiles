@@ -5,7 +5,7 @@
 # modified by akerl
 
 # Change this to your own username
-DEFAULT_USERNAME='akerl'
+DEFAULT_USERNAMES=(akerl laker)
 
 # Threshold (sec) for showing cmd exec time
 CMD_MAX_EXEC_TIME=5
@@ -33,7 +33,7 @@ zstyle ':vcs_info:git*' actionformats ' %b|%a'
 setopt PROMPT_SUBST
 
 # Only show username if not default
-[ "$USER" != "$DEFAULT_USERNAME" ] && local username='%F{red}%n%f@'
+[[ ${DEFAULT_USERNAMES[(r)"$USER"]} == "$USER" ]] && local username='%F{red}%n%f@'
 
 # Fastest possible way to check if repo is dirty
 git_dirty() {
