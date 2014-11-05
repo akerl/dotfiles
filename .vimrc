@@ -97,6 +97,8 @@ set ignorecase
 set incsearch
 set hlsearch
 
+set autoread
+
 set backspace=indent,eol,start
 
 set modelines=0
