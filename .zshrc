@@ -28,7 +28,6 @@ setopt share_history
 setopt extended_glob
 setopt glob_dots
 setopt short_loops
-setopt autocd
 
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh_cache
