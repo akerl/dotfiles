@@ -3,7 +3,7 @@ if [ "$(uname)" = "Darwin" ] ; then
     PATH="$PATH:/usr/local/bin:/usr/local/sbin"
     PATH="$PATH:/usr/bin:/usr/sbin:/bin:/sbin"
     for pkg in coreutils gnu-tar gnu-sed ; do
-        if [ -e $(brew --prefix $pkg)/libexec/gnubin ] ; then
+        if [ -e /opt/boxen/homebrew/opt/$pkg/libexec/gnubin ] ; then
             PATH="/opt/boxen/homebrew/opt/$pkg/libexec/gnubin:$PATH"
         fi
     done
