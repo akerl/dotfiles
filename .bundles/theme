@@ -33,7 +33,7 @@ zstyle ':vcs_info:git*' actionformats ' %b|%a'
 setopt PROMPT_SUBST
 
 # Only show username if not default
-[[ ${DEFAULT_USERNAMES[(r)"$USER"]} == "$USER" ]] && local username='%F{red}%n%f@'
+[[ ${DEFAULT_USERNAMES[(r)$USER]} == "$USER" ]] || local username='%F{red}%n%f@'
 
 # Fastest possible way to check if repo is dirty
 git_dirty() {
