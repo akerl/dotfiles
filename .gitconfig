@@ -4,7 +4,7 @@
     name = Les Aker
     email = me@lesaker.org
 [color]
-    ui = true
+    ui = auto
 [merge]
     ff = only
 [help]
