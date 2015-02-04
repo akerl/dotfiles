@@ -42,6 +42,7 @@ source ~/.bundles/theme
 source ~/.bundles/marks
 source ~/.bundles/sockets
 source ~/.bundles/k
+source ~/.bundles/git-open
 [ -e ~/.bundles/priv ] && source ~/.bundles/priv
 [ -e ~/.bundles/work ] && source ~/.bundles/work
 true
