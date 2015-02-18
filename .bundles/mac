@@ -43,4 +43,4 @@ export GOPATH=$HOME/.go
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 
-alias issues="open 'https://github.com/issues?q=is%3Aopen+is%3Aissue+user%3Aakerl+user%3Aamylum+user%3Adock0+user%3Ahalyard'"
+alias issues="open 'https://github.com/issues?q=is%3Aopen+is%3Aissue+user%3Aakerl+user%3Aamylum+user%3Adock0+user%3Ahalyard+is%3Apublic'"
