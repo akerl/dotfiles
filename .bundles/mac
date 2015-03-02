@@ -20,7 +20,7 @@ alias g='gist -c'
 
 alias s='ssh'
 
-alias gpg='gpg --homedir /Volumes/akerl-vault/gnupg'
+export GNUPGHOME=/Volumes/akerl-vault/gnupg
 alias keybase='keybase --homedir /Volumes/akerl-vault'
 
 function hiddenfiles () {
