@@ -11,6 +11,8 @@ if [ "$(uname)" = "Darwin" ] ; then
         PATH="$HOME/.rbenv/shims/:$PATH"
         PATH="/usr/local/brew/bin:/usr/local/brew/sbin:$PATH"
     fi
+    source ~/.profile
+    [ -f /opt/boxen/rbenv/completions/rbenv.zsh ] && source /opt/boxen/rbenv/completions/rbenv.zsh
 elif [ -e /etc/arch-release ] ; then
     PATH="$HOME/.bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl"
 else

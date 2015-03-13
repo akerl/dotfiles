@@ -1,5 +1,3 @@
-source ~/.profile
-
 basepath="$(dirname $(which zsh))/../share"
 fpath=(~/.completions $basepath/zsh-completions $basepath/zsh/functions $basepath/zsh/site-functions)
 
