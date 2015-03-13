@@ -138,6 +138,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/DetectIndent'
+Plugin 'thoughtbot/pick.vim'
 call vundle#end()
 
 filetype plugin indent on
