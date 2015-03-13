@@ -169,3 +169,5 @@ autocmd FileType markdown :match none
 
 autocmd BufReadPost * :DetectIndent
 
+nnoremap <leader>b :call PickBuffer()<cr>
+nnoremap <leader>p :call PickFile()<cr>
