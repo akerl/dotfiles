@@ -43,7 +43,7 @@ function unmark {
 
 function lsmarks {
     offset="$(ls -1 "$MARKPATH" | awk '{print length($0)}' | sort -nr | head -1)"
-    ls -l "$MARKPATH" | awk '/->/ {printf "%-'$offset's -> %s\n", $9, $11}'
+    ls -l "$MARKPATH" | awk '/->/ {printf "%-'$offset's -> %s\n", $8, $10}'
 }
 
 
