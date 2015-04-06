@@ -3,4 +3,5 @@ base_path: '~/Code'
 purge: true
 quiet: true
 exclude:
-- ^[pt]
+  full_name:
+  - ^[pt]
