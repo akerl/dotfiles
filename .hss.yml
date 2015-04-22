@@ -35,6 +35,10 @@ expansions:
         - dc-l
     tokyo:
         - dc-t
+    singapore:
+        - dc-s
+    frankfurt:
+        - dc-g
 shortcuts:
     unsigned: '-oUserKnownHostsFile=/dev/null -oStrictHostKeyChecking=no'
 ...
