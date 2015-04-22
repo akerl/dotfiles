@@ -10,7 +10,7 @@ patterns:
         long: '-A4 -oTCPKeepAlive=no #{shortcut("unsigned")} root@#{expand($1)}.a-rwx.org'
     -   note: lish
         example: ld -> akerl@lish-dallas.linode.com
-        short: '^l([dfantl])$'
+        short: '^l([dfantlsg])$'
         long: '-4 akerl@lish-#{expand("dc-#{$1}")}.linode.com'
 expansions:
     miro:
