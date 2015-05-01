@@ -17,7 +17,7 @@ alias g='gist -c'
 
 alias s='ssh'
 
-SSL_CERT_FILE="/usr/local/etc/openssl/cert.pem"
+export SSL_CERT_FILE="/usr/local/etc/openssl/cert.pem"
 
 export GNUPGHOME=/Volumes/akerl-vault/gnupg
 alias keybase='keybase --homedir /Volumes/akerl-vault'
@@ -34,8 +34,6 @@ function hiddenfiles () {
     defaults write com.apple.finder AppleShowAllFiles -bool $new
     killall Finder
 }
-
-#export SSL_CERT_FILE=/Users/akerl/.sslcerts
 
 export GOPATH=$HOME/.go
 
