@@ -1,0 +1,19 @@
+require 'keychain'
+
+keychain = Keychain.default.generic_passwords.where(service: 'vagrant-linode')
+fail('Failed to load keychain') unless api_key.first
+key = keychain.first.password
+
+Vagrant.configure(2) do |config|
+  config.vm.provider :linode do |provider, override|
+    override.ssh.private_key_path = '~/.ssh/id_ed25519'
+    override.vm.box = 'linode'
+    override.vm.box_url = 'https://github.com/displague/vagrant-linode/raw/master/box/linode.box'
+
+    provider.token = key
+    provider.datacenter = 'newark'
+    provider.plan = 'Linode 2048'
+    provider.image = "Arch Linux 2015.02"
+    provider.private_networking = true
+  end
+end

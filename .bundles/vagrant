@@ -1,0 +1,4 @@
+export VAGRANT_DEFAULT_PROVIDER=linode
+
+up="VAGRANT_CWD=~/.vagrant.d vagrant up"
+
