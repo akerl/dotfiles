@@ -1,4 +1,5 @@
 export VAGRANT_DEFAULT_PROVIDER=linode
+export VAGRANT_CWD=~/.vagrant.d
 
-alias up="VAGRANT_CWD=~/.vagrant.d vagrant up"
+alias nd=vagrant
 
