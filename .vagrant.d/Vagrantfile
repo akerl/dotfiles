@@ -13,7 +13,7 @@ Vagrant.configure(2) do |config|
     provider.token = key
     provider.datacenter = 'newark'
     provider.plan = 'Linode 2048'
-    provider.image = "Arch Linux 2015.02"
+    provider.distribution = "Arch Linux 2015.02"
     provider.private_networking = true
   end
 end
