@@ -1,5 +1,5 @@
 [push]
-    default = simple
+    default = current
 [user]
     name = Les Aker
     email = me@lesaker.org
