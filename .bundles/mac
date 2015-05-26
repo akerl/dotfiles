@@ -43,3 +43,5 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo 
 
 alias issues="open 'https://github.com/issues?q=is%3Aopen+is%3Aissue+user%3Aakerl+user%3Aamylum+user%3Adock0+user%3Ahalyard+is%3Apublic'"
 alias pull="spaarti && cd ~/Code && repo_sync"
+
+alias cask="brew cask"
