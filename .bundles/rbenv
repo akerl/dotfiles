@@ -15,3 +15,4 @@ rbenv() {
   esac
 }
 
+alias be='bundle exec'
