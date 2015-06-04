@@ -126,7 +126,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'Lokaltog/vim-easymotion'
