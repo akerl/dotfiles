@@ -31,7 +31,7 @@ function! Preserve(command)
     call cursor(l, c)
 endfunction
 
-let mapleader = "'"
+let mapleader = "\<Space>"
 
 nnoremap <leader>[ gT
 nnoremap <leader>] gt
@@ -59,7 +59,9 @@ nmap <silent> <leader><Right> :wincmd l<CR>
 
 nnoremap <silent> <F8> :TlistToggle<CR>
 
-nnoremap <silent> <leader>w :call Preserve("%s/\\s\\+$//e")<CR>
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>q :x<CR>
+nmap <Leader><Leader> V
 
 nnoremap <leader>e :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
