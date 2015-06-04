@@ -63,6 +63,9 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :x<CR>
 nmap <Leader><Leader> V
 
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
 nnoremap <leader>e :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
@@ -136,6 +139,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/DetectIndent'
 Plugin 'thoughtbot/pick.vim'
+Plugin 'terryma/vim-expand-region'
 call vundle#end()
 
 filetype plugin indent on
