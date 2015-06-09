@@ -47,3 +47,6 @@ alias pull="(spaarti && cd ~/Code && repo_sync)"
 alias cask="brew cask"
 
 alias pmg="puppet module generate"
+
+export SSH_AUTH_SOCK=$(launchctl getenv SSH_AUTH_SOCK)
+
