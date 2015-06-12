@@ -1,4 +1,5 @@
 ---
+auth_file: ~/.octoauth.d/spaarti.yml
 base_path: '~/src'
 purge: true
 quiet: true
