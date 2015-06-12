@@ -1,5 +1,5 @@
 ---
-base_path: '~/Code'
+base_path: '~/src'
 purge: true
 quiet: true
 exclude:
