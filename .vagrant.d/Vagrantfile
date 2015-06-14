@@ -1,8 +1,13 @@
-require 'keychain'
+begin
+  require 'keychain'
 
-keychain = Keychain.default.generic_passwords.where(service: 'vagrant-linode')
-fail('Failed to load keychain') unless keychain.first
-key = keychain.first.password
+  keychain = Keychain.default.generic_passwords.where(service: 'vagrant-linode')
+  fail('Failed to load keychain') unless keychain.first
+  key = keychain.first.password
+rescue LoadError
+  puts 'Failed to load keychain'
+  key = ''
+end
 
 Vagrant.configure(2) do |config|
   config.vm.provider :linode do |provider, override|
