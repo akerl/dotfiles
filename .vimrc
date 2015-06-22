@@ -128,7 +128,6 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'bling/vim-airline'
-Plugin 'vim-scripts/taglist.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'honza/dockerfile.vim'
 Plugin 'vim-scripts/nginx.vim'
