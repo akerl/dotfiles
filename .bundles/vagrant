@@ -1,5 +1,0 @@
-export VAGRANT_DEFAULT_PROVIDER=linode
-export VAGRANT_CWD=~/.vagrant.d
-
-alias nd=vagrant
-

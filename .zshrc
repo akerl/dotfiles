@@ -1,10 +1,3 @@
-[ -e ~/.bundles/priv ] && source ~/.bundles/priv
-if [ "$(uname)" = "Darwin" ]; then
-    source ~/.bundles/mac
-else
-    source ~/.bundles/linux
-fi
-
 autoload -U compinit
 compinit
 
@@ -34,15 +27,10 @@ zstyle ':completion:*' cache-path ~/.zsh_cache
 zstyle ':completion:*:functions' ignored-patterns '_*'
 
 export EDITOR='vim'
-source ~/.bundles/keybinds
-source ~/.bundles/history_search
-source ~/.bundles/helpers
-source ~/.bundles/autoenv
-source ~/.bundles/theme
-source ~/.bundles/marks
-source ~/.bundles/sockets
-source ~/.bundles/k
-[ -e ~/.bundles/priv ] && source ~/.bundles/priv
-[ -e ~/.bundles/work ] && source ~/.bundles/work
+
+for $bundle in $(find ~/.bundles -mindepth 1) ; do
+    source $bundle
+done
+
 true
 

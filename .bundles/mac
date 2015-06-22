@@ -1,11 +1,7 @@
+if [ "$(uname)" != "Darwin" ]; then return ; fi
+
 basepath="$(dirname $(which zsh))/../share"
 fpath=(~/.completions $basepath/zsh-completions $basepath/zsh/functions $basepath/zsh/site-functions)
-
-lockfile -1 -r5 ~/.zshrc-lock
-source ~/.bundles/gpg-agent
-source ~/.bundles/rbenv
-source ~/.bundles/vagrant
-rm -f ~/.zshrc-lock
 
 alias sha512sum='shasum -a 512'
 alias sha256sum='shasum -a 256'
