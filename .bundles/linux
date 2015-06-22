@@ -33,6 +33,8 @@ function ds() {
 
 export TZ='US/Eastern'
 
+unset SSH_ASKPASS
+
 if [ "$COLORTERM" = 'xfce4-terminal' ] ; then
     export TERM=xterm-256color
 fi
