@@ -1,3 +1,6 @@
+export LANG='en_US.UTF-8'
+export LC_ALL='en_US.UTF-8'
+
 if [ "$(uname)" = "Darwin" ] ; then
     PATH="$HOME/.bin"
     PATH="$PATH:/usr/local/bin:/usr/local/sbin"
@@ -16,6 +19,7 @@ if [ "$(uname)" = "Darwin" ] ; then
 elif [ -e /etc/arch-release ] ; then
     PATH="$HOME/.bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl"
 else
-    PATH="$HOME/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+    PATH="$HOME/.bin:$HOME/.gem/ruby/1.8/bin"
+    PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 fi
 
