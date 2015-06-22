@@ -28,7 +28,7 @@ zstyle ':completion:*:functions' ignored-patterns '_*'
 
 export EDITOR='vim'
 
-for $bundle in $(find ~/.bundles -mindepth 1) ; do
+for bundle in $(find ~/.bundles -mindepth 1) ; do
     source $bundle
 done
 
