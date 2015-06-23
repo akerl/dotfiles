@@ -14,7 +14,7 @@ alias g='gist -c'
 
 alias s='ssh'
 
-export SSL_CERT_FILE="/opt/boxen/homebrew/etc/openssl/cert.pem"
+#export SSL_CERT_FILE="/opt/boxen/homebrew/etc/openssl/cert.pem"
 
 export GNUPGHOME=/Volumes/akerl-vault/gnupg
 alias keybase='keybase --homedir /Volumes/akerl-vault'
