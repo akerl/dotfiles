@@ -73,20 +73,7 @@ nnoremap <F2> :set invpaste paste?<cr>
 set pastetoggle=<F2>
 set showmode
 
-function! ToggleLongLineMatch()
-    if s:longlinematch == 0
-        let s:longlinematch = 1
-        match ErrorMsg '\%>80v.\+'
-    else
-        let s:longlinematch = 0
-        match ErrorMsg none
-    endif
-endfunction
-let s:longlinematch = 0
-ToggleLongLineMatch()
-
-nnoremap <F4> :call ToggleLongLineMatch()<cr>
-inoremap <F4> <C-O>:call ToggleLongLineMatch()<cr>
+set colorcolumn=81
 
 if ! has('gui_running')
     set ttimeoutlen=10
