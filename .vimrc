@@ -139,6 +139,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/DetectIndent'
 Plugin 'thoughtbot/pick.vim'
 Plugin 'terryma/vim-expand-region'
+Plugin 'godlygeek/tabular'
+Plugin 'rodjek/vim-puppet'
 call vundle#end()
 
 filetype plugin indent on
