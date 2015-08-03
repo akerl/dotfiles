@@ -45,3 +45,5 @@ alias pmg="puppet module generate"
 
 export SSH_AUTH_SOCK=$(launchctl getenv SSH_AUTH_SOCK)
 
+umask 022
+
