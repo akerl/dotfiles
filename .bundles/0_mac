@@ -43,7 +43,7 @@ alias cask="brew cask"
 
 alias pmg="puppet module generate"
 
-export SSH_AUTH_SOCK=$(launchctl getenv SSH_AUTH_SOCK)
+export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
 
 umask 022
 
