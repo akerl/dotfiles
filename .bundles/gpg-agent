@@ -1,28 +1,5 @@
 # Based on ssh-agent code
 if [ "$(uname)" != "Darwin" ]; then return ; fi
 
-local GPG_ENV=$HOME/.gpg-agent
-
-function start_agent {
-  /usr/bin/env gpg-agent --daemon --no-use-standard-socket --write-env-file ${GPG_ENV} &> /dev/null
-  chmod 600 ${GPG_ENV}
-  GPG_AGENT_PID="$(ps aux | awk '/ [g]pg-agent --daemon/ { print $2 }')"
-  echo "GPG_AGENT_PID=$GPG_AGENT_PID" >> ${GPG_ENV}
-  . ${GPG_ENV} > /dev/null
-}
-
-if [ -f "${GPG_ENV}" ]; then
-  . ${GPG_ENV} > /dev/null
-  ps aux | grep "${GPG_AGENT_PID}.*[g]pg-agent" > /dev/null || {
-    start_agent
-  }
-else
-  start_agent
-fi
-
-export GPG_AGENT_INFO
-export GPG_AGENT_PID
-
-GPG_TTY=$(tty)
-export GPG_TTY
+/usr/bin/env gpg-agent --daemon &> /dev/null
 
