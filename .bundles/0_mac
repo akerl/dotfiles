@@ -16,7 +16,7 @@ alias s='ssh'
 
 #export SSL_CERT_FILE="/opt/boxen/homebrew/etc/openssl/cert.pem"
 
-export GNUPGHOME=/Volumes/akerl-vault/gnupg
+alias vgpg="GNUPGHOME=/Volumes/akerl-vault/gnupg gpg2"
 alias keybase='keybase --homedir /Volumes/akerl-vault'
 
 function hiddenfiles () {
