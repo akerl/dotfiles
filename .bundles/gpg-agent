@@ -1,5 +1,5 @@
 # Based on ssh-agent code
 if [ "$(uname)" != "Darwin" ]; then return ; fi
 
-/usr/bin/env gpg-agent --daemon &> /dev/null
+/usr/bin/env gpg-agent --daemon --log-file ~/.gnupg/logfile &> /dev/null
 
