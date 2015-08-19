@@ -73,7 +73,9 @@ nnoremap <F2> :set invpaste paste?<cr>
 set pastetoggle=<F2>
 set showmode
 
-set colorcolumn=81
+if has('colorcolumn')
+    set colorcolumn=81
+endif
 
 if ! has('gui_running')
     set ttimeoutlen=10
