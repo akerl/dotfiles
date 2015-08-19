@@ -56,9 +56,9 @@ git_info() {
 
 get_host() {
     if [[ -n "$SSH_CLIENT"  ||  -n "$SSH2_CLIENT" || -n "$(tty | grep pts)" ]]; then
-        echo "%F{yellow}%M%f" #SSH
+        echo "%F{yellow}%m%f" #SSH
     else
-        echo "%F{239}%M%f" # no SSH
+        echo "%F{239}%m%f" # no SSH
     fi
 }
 
