@@ -73,7 +73,7 @@ nnoremap <F2> :set invpaste paste?<cr>
 set pastetoggle=<F2>
 set showmode
 
-if has('colorcolumn')
+if exists('+colorcolumn')
     set colorcolumn=81
 endif
 
