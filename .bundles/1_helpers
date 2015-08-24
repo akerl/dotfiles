@@ -23,6 +23,8 @@ alias gdc='git diff --cached'
 alias map="xargs -n1"
 alias mapp="xargs -n1 -I{}"
 
+alias kgpg="ps aux |awk '/[g]pg-agent --daemon/ {print \$2}' | xargs kill -9"
+
 function pip2-upgrade () { for package in $(pip2 freeze | sed 's/==.*//') ; pip2 install --upgrade $package ; }
 function pip3-upgrade () { for package in $(pip3 freeze | sed 's/==.*//') ; pip3 install --upgrade $package ; }
 
