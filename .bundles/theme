@@ -85,7 +85,7 @@ preexec() {
 precmd() {
     vcs_info
     # Add `%*` to display the time
-    print -P '%F{blue}%~`git_info` ${username}`get_host` %f %F{yellow}`cmd_exec_time`%f'
+    print -P '${GROUP}%F{blue}%~`git_info` ${username}`get_host` %f %F{yellow}`cmd_exec_time`%f'
     # Reset value since `preexec` isn't always triggered
     unset cmd_timestamp
 }
