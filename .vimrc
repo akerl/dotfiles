@@ -143,6 +143,7 @@ Plugin 'thoughtbot/pick.vim'
 Plugin 'terryma/vim-expand-region'
 Plugin 'godlygeek/tabular'
 Plugin 'rodjek/vim-puppet'
+Plugin 'fatih/vim-go'
 call vundle#end()
 
 filetype plugin indent on
