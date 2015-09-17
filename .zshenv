@@ -3,7 +3,6 @@ export LC_ALL='en_US.UTF-8'
 
 if [ "$(uname)" = "Darwin" ] ; then
     PATH="$HOME/.bin"
-    PATH="$PATH:/usr/local/bin:/usr/local/sbin"
     PATH="$PATH:/usr/bin:/usr/sbin:/bin:/sbin"
     for pkg in coreutils gnu-tar gnu-sed ; do
         if [ -e /opt/boxen/homebrew/opt/$pkg/libexec/gnubin ] ; then
@@ -16,6 +15,7 @@ if [ "$(uname)" = "Darwin" ] ; then
     fi
     source ~/.profile
     [ -f /opt/boxen/rbenv/completions/rbenv.zsh ] && source /opt/boxen/rbenv/completions/rbenv.zsh
+    PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 elif [ -e /etc/arch-release ] ; then
     PATH="$HOME/.bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl"
 else
