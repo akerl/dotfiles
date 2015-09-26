@@ -17,7 +17,7 @@ alias s='ssh'
 #export SSL_CERT_FILE="/opt/boxen/homebrew/etc/openssl/cert.pem"
 
 alias vgpg="GNUPGHOME=/Volumes/akerl-vault/gnupg gpg2"
-alias keybase='keybase --homedir /Volumes/akerl-vault'
+#alias keybase='keybase --homedir /Volumes/akerl-vault'
 
 function hiddenfiles () {
     current="$(defaults read com.apple.finder AppleShowAllFiles)"
