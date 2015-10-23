@@ -1,3 +1,4 @@
+" vim:foldmethod=marker:foldlevel=0
 if &term=="xterm" || &term=="xterm-color"
     set t_Co=8
     set t_Sb=^[4%dm
@@ -87,9 +88,9 @@ if ! has('gui_running')
 endif
 
 set number
-" set relativenumber
-" autocmd InsertEnter * :set norelativenumber
-" autocmd InsertLeave * :set relativenumber
+set relativenumber
+autocmd InsertEnter * :set norelativenumber
+autocmd InsertLeave * :set relativenumber
 nnoremap <F1> :set number! number?<cr>
 inoremap <F1> <C-O>:set number! number?<cr>
 nnoremap <F3> :set relativenumber! relativenumber?<cr>
@@ -98,6 +99,8 @@ inoremap <F3> <C-O>:set relativenumber! relativenumber?<cr>
 set ignorecase
 set incsearch
 set hlsearch
+" turn off search highlight
+nnoremap <leader>h :nohlsearch<CR>
 
 set autoread
 
@@ -119,6 +122,7 @@ set backupdir=~/.vim/swap
 set directory=~/.vim/swap
 
 set ttyfast
+set lazyredraw
 
 set hidden
 
@@ -151,6 +155,12 @@ filetype plugin indent on
 autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
 
 map <C-n> :NERDTreeToggle<CR>
+
+" CtrlP settings
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 let g:detectindent_preferred_expandtab = 1
 let g:detectindent_preferred_indent = 4
