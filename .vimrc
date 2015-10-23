@@ -1,4 +1,7 @@
-" vim:foldmethod=marker:foldlevel=0
+""""
+" Terminal settings {{{
+""""
+" Set keyboard for xterm support of number keys
 if &term=="xterm" || &term=="xterm-color"
     set t_Co=8
     set t_Sb=^[4%dm
@@ -20,103 +23,97 @@ if &term=="xterm" || &term=="xterm-color"
     :imap <Esc>OS -
 endif
 
-function! Preserve(command)
-    " Preparation: save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    " Do the business:
-    execute a:command
-    " Clean up: restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
-endfunction
-
+" Adjust vim timeouts so that commands aren't delayed as long
+set ttimeoutlen=10
+augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+augroup END
+" }}}
+""""
+" Core Keys {{{
+""""
+" Leader as space
 let mapleader = "\<Space>"
-
-nnoremap <leader>[ gT
-nnoremap <leader>] gt
-nnoremap <leader>1 1gt
-nnoremap <leader>2 2gt
-nnoremap <leader>3 3gt
-nnoremap <leader>4 4gt
-nnoremap <leader>5 5gt
-nnoremap <leader>6 6gt
-nnoremap <leader>7 7gt
-nnoremap <leader>8 8gt
-nnoremap <leader>9 9gt
-nnoremap <leader>0 :tablast<CR>
-cnoreabbrev t tabedit
-nnoremap <leader>t :tabedit
-
-nnoremap <leader>. :bn<CR>
-nnoremap <leader>, :bp<CR>
-nnoremap <leader>/ <C-^>
-
-nmap <silent> <leader><Up> :wincmd k<CR>
-nmap <silent> <leader><Down> :wincmd j<CR>
-nmap <silent> <leader><Left> :wincmd h<CR>
-nmap <silent> <leader><Right> :wincmd l<CR>
-
-nnoremap <silent> <F8> :TlistToggle<CR>
-
+" Shortcuts for write/quit
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :x<CR>
-nmap <Leader><Leader> V
-
-vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
-
-nnoremap <leader>e :set list!<CR>
-set listchars=tab:▸\ ,eol:¬
-
-nnoremap <F2> :set invpaste paste?<cr>
-set pastetoggle=<F2>
-set showmode
-
+" }}}
+""""
+" Display {{{
+""""
+" Show syntax highlighting
+syntax on
+" Show column at 80 character mark if vim is new enough
 if exists('+colorcolumn')
     set colorcolumn=81
 endif
-
-if ! has('gui_running')
-    set ttimeoutlen=10
-    augroup FastEscape
-        autocmd!
-        au InsertEnter * set timeoutlen=0
-        au InsertLeave * set timeoutlen=1000
-    augroup END
-endif
-
+" Show line number and relative numbers
 set number
 set relativenumber
-autocmd InsertEnter * :set norelativenumber
-autocmd InsertLeave * :set relativenumber
-nnoremap <F1> :set number! number?<cr>
-inoremap <F1> <C-O>:set number! number?<cr>
+" Use F1 to toggle line numbers
+nmap <F1> :set number! relativenumber! relativenumber?<cr>
+imap <F1> <C-O>:set number! relativenumber! relativenumber?<cr>
+" Use F3 to toggle relative line numbers
 nnoremap <F3> :set relativenumber! relativenumber?<cr>
 inoremap <F3> <C-O>:set relativenumber! relativenumber?<cr>
-
-set ignorecase
-set incsearch
-set hlsearch
-" turn off search highlight
-nnoremap <leader>h :nohlsearch<CR>
-
-set autoread
-
+" show tab/eol with special chars when :list! used
+set listchars=tab:▸\ ,eol:¬
+" }}}
+""""
+" Input {{{
+""""
+" Toggle paste with leader+x or F2 (for insert mode)
+nnoremap <leader>x :set invpaste paste?<cr>
+nnoremap <F2> :set invpaste paste?<cr>
+set pastetoggle=<F2>
+" Backspace should delete indents and linewrap
 set backspace=indent,eol,start
-
-set modelines=0
-
-syntax on
-
+" }}}
+""""
+" Searching {{{
+""""
+" Searches are case-insensitive
+set ignorecase
+" Searches start immediately as you type
+set incsearch
+" Highlight results
+set hlsearch
+" Hotkey to turn off persistent highlighting
+nnoremap <leader>h :nohlsearch<CR>
+" }}}
+""""
+" Indentation {{{
+""""
+" tabstop is the number of spaces a tab counts for
 set tabstop=4
+" softabstop is the number of spaces a tab counts for when editing
 set softtabstop=4
+" Number of spaces to use for each step of (auto)indent
 set shiftwidth=4
+" expandtab turns <TAB>s into spaces
 set expandtab
+" enables use of shiftwidth when inserting tabs
 set smarttab
+" Copy indent from current line when starting a new line
 set autoindent
+" Do smart autoindenting when starting a new line
 set smartindent
+" }}}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 set backupdir=~/.vim/swap
 set directory=~/.vim/swap
@@ -124,7 +121,14 @@ set directory=~/.vim/swap
 set ttyfast
 set lazyredraw
 
+set foldmethod=indent
+set foldlevelstart=10
+set foldnestmax=10
+nnoremap <leader>z za
+
 set hidden
+
+set modelines=1
 
 set nocompatible               " be iMproved
 filetype off
@@ -185,3 +189,4 @@ autocmd BufReadPost * :DetectIndent
 
 nnoremap <leader>b :call PickBuffer()<cr>
 nnoremap <leader>p :call PickFile()<cr>
+" vim:foldmethod=marker:foldlevel=0
