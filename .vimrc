@@ -111,8 +111,8 @@ set smartindent
 " Backups {{{
 """"
 " Enable backup files and store them in ~/.vim/backup
-set backup on
-set writebackup on
+set backup
+set writebackup
 set backupdir=~/.vim/swap
 " Enable swap files and store them in ~/.vim/swap
 set directory=~/.vim/swap
