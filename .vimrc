@@ -136,8 +136,9 @@ set modelines=5
 filetype plugin indent on
 " Detect indentation for tabs vs spaces
 autocmd BufReadPost * :DetectIndent
-" Handle Makefiles with hard tabs
+" Handle Makefiles and golang with hard tabs
 autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab nolist
+autocmd FileType go setlocal ts=4 sts=4 sw=4 noexpandtab nolist
 " Use markdown for .md files
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 " }}}
