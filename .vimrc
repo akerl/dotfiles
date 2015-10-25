@@ -1,4 +1,4 @@
-""""
+set nocompatible " leave the past behind
 " Terminal settings {{{
 """"
 " Set keyboard for xterm support of number keys
@@ -31,7 +31,6 @@ augroup FastEscape
     au InsertLeave * set timeoutlen=1000
 augroup END
 " }}}
-""""
 " Core Keys {{{
 """"
 " Leader as space
@@ -40,9 +39,15 @@ let mapleader = "\<Space>"
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :x<CR>
 " }}}
-""""
 " Display {{{
 """"
+" Set solarized theme
+set background=dark
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+colorscheme solarized
+" Adjust selection highlight color
+highlight Visual ctermbg=Black ctermfg=Cyan
 " Show syntax highlighting
 syntax on
 " Show column at 80 character mark if vim is new enough
@@ -58,10 +63,14 @@ imap <F1> <C-O>:set number! relativenumber! relativenumber?<cr>
 " Use F3 to toggle relative line numbers
 nnoremap <F3> :set relativenumber! relativenumber?<cr>
 inoremap <F3> <C-O>:set relativenumber! relativenumber?<cr>
-" show tab/eol with special chars when :list! used
-set listchars=tab:▸\ ,eol:¬
+" show tab characters as '▸ '
+set list
+set listchars=tab:▸\  
+" Send more actions at once, suitable for fast systems
+set ttyfast
+" Redraw less often
+set lazyredraw
 " }}}
-""""
 " Input {{{
 """"
 " Toggle paste with leader+x or F2 (for insert mode)
@@ -71,7 +80,6 @@ set pastetoggle=<F2>
 " Backspace should delete indents and linewrap
 set backspace=indent,eol,start
 " }}}
-""""
 " Searching {{{
 """"
 " Searches are case-insensitive
@@ -83,7 +91,6 @@ set hlsearch
 " Hotkey to turn off persistent highlighting
 nnoremap <leader>h :nohlsearch<CR>
 " }}}
-""""
 " Indentation {{{
 """"
 " tabstop is the number of spaces a tab counts for
@@ -101,92 +108,62 @@ set autoindent
 " Do smart autoindenting when starting a new line
 set smartindent
 " }}}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+" Backups {{{
+""""
+" Enable backup files and store them in ~/.vim/backup
+set backup on
+set writebackup on
 set backupdir=~/.vim/swap
+" Enable swap files and store them in ~/.vim/swap
 set directory=~/.vim/swap
-
-set ttyfast
-set lazyredraw
-
+" }}}
+" Folding {{{
+""""
+" Fold based on indent
 set foldmethod=indent
+" Show 10 folds in by default
 set foldlevelstart=10
+" Don't nest deeper than 10 levels
 set foldnestmax=10
+" Use <leader>z to open/close a fold
 nnoremap <leader>z za
-
-set hidden
-
-set modelines=1
-
-set nocompatible               " be iMproved
-filetype off
-
+" }}}
+" File Parsing {{{
+""""
+" Check the first and last 5 lines for modelines that set local vim behavior
+set modelines=5
+" Enable filetype-based display
+filetype plugin indent on
+" Detect indentation for tabs vs spaces
+autocmd BufReadPost * :DetectIndent
+" Handle Makefiles with hard tabs
+autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab nolist
+" Use markdown for .md files
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+" }}}
+" Plugins {{{
+""""
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'bling/vim-airline'
-Plugin 'Lokaltog/vim-easymotion'
 Plugin 'honza/dockerfile.vim'
 Plugin 'vim-scripts/nginx.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'skalnik/vim-vroom'
-Plugin 'tpope/vim-fugitive'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/DetectIndent'
-Plugin 'thoughtbot/pick.vim'
-Plugin 'terryma/vim-expand-region'
-Plugin 'godlygeek/tabular'
 Plugin 'rodjek/vim-puppet'
 Plugin 'fatih/vim-go'
 call vundle#end()
-
-filetype plugin indent on
-
-autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
-
-map <C-n> :NERDTreeToggle<CR>
-
-" CtrlP settings
-let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-
+" }}}
+" DetectIndent {{{
+""""
 let g:detectindent_preferred_expandtab = 1
 let g:detectindent_preferred_indent = 4
-
+" }}}
+" Airline {{{
+""""
 let g:airline_powerline_fonts = 1
 set laststatus=2
-
-set background=dark
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-colorscheme solarized
-highlight Visual ctermbg=Black ctermfg=Cyan
-
-syntax match Tab /\t/
-highlight Tab gui=underline guifg=blue ctermbg=blue
-
-au BufRead,BufNewFile *.md set filetype=markdown
-
-autocmd FileType markdown :match none
-
-autocmd BufReadPost * :DetectIndent
-
-nnoremap <leader>b :call PickBuffer()<cr>
-nnoremap <leader>p :call PickFile()<cr>
+" }}}
 " vim:foldmethod=marker:foldlevel=0
