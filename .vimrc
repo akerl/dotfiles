@@ -166,4 +166,7 @@ let g:detectindent_preferred_indent = 4
 let g:airline_powerline_fonts = 1
 set laststatus=2
 " }}}
+" Ruby {{{
+let g:ruby_path = $RBENV_PATH
+" }}}
 " vim:foldmethod=marker:foldlevel=0
