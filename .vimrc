@@ -153,6 +153,7 @@ Plugin 'honza/dockerfile.vim'
 Plugin 'vim-scripts/nginx.vim'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/DetectIndent'
+Plugin 'godlygeek/tabular'
 Plugin 'rodjek/vim-puppet'
 Plugin 'fatih/vim-go'
 call vundle#end()
