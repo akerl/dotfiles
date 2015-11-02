@@ -1,4 +1,4 @@
-rbenv rehash 2>/dev/null
+rbenv rehash 2>/dev/null || return
 
 rbenv() {
   typeset command
