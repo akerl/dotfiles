@@ -34,7 +34,7 @@
 
 [alias]
     co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
-    yolo = commit -am \\\"`curl -s http://whatthecommit.com/index.txt`\\\"
+    yolo = !sh -c 'git commit -a -m "`curl -s http://whatthecommit.com/index.txt`"'
 
 [hub]
     protocol = https
