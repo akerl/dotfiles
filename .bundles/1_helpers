@@ -19,6 +19,7 @@ alias gpr='git pull --rebase'
 alias gph='git push heroku master'
 alias gtp='git push --tags'
 alias gdc='git diff --cached'
+alias gcm='git checkout master'
 
 alias map="xargs -n1"
 alias mapp="xargs -n1 -I{}"
