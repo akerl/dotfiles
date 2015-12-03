@@ -31,6 +31,8 @@
 
 local curcontext="$curcontext" state line ret=1
 local -a _command_args
+local -a _global_args
+local _old_ifs
 
 _arguments -C -A "-v" -A "--version" \
   '(- 1 *)'{-v,--version}'[display version information]' \
@@ -309,9 +311,15 @@ case $state in
     ;;
 esac
 
+_old_ifs="$IFS"
+IFS=$'\n'
+_global_args=($(keybase advanced | grep '^\s*--' | sed -r 's/^[\t ]*(--[^\t ,]+)( [^\t ,]*)?,? ?(--?[^\t ]+)?[\t ]*(.*)$/(\3)\1[\4]/'))
+IFS="$_old_ifs"
+
+
 _arguments \
   $_command_args \
-  '(-h)'--help'[Show help message and exit.]' \
+  $_global_args \
   &&  return 0
 
 return ret
