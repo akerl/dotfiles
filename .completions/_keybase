@@ -30,46 +30,51 @@
 # SOFTWARE.
 
 local curcontext="$curcontext" state line ret=1 IFS=$'\n'
+local -a _global_args
 
-_arguments -C \
-  '1:cmd:->cmds' \
+_global_args=($(keybase advanced | grep '^\s*--' | sed -r 's/^[\t ]*(--[^\t ,]+)( [^\t ,]*)?,? ?(--?[^\t ]+)?[\t ]*(.*)$/(\3)\1[\4]/'))
+
+_arguments \
+  ':subcommand:->subcommand' \
+  $_global_args \
   '*::arg:->args' \
   && ret=0
 
 case $state in
-  cmds)
-    local commands; commands=(
-    "btc:add a signed cryptocurrency address to your profile" \
-      "cert:print out the CA cert the client uses to authorize HTTPS connections" \
-      "dir:sign or verify a directory's contents" \
-      "config:make an initial configuration file" \
-      "decrypt:decrypt a file" \
-      "encrypt:encrypt a message and output to stdout or a file" \
-      "help:display help" \
-      "id:Identify a user, but do not accept or reject trust" \
-      "join:establish a new account on keybase.io" \
-      "keygen:generate a new PGP public key and optionally push it to the server" \
-      "list-signatures:list of your non-revoked signatures" \
-      "list-tracking:list people you are tracking" \
-      "login:establish a session" \
-      "logout:logout from the server" \
-      "pull:pull your public (& private, if possible) key(s) from the server" \
-      "push:push a PGP key from the client to the server" \
-      "prove:add a proof of identity" \
-      "reset:reset the local setup, deleting all local cached state" \
-      "revoke:revoke the currently active PGP keys" \
-      "revoke-signatures:revoke a proof or signature" \
-      "search:search all users" \
-      "sign:sign a message" \
-      "status:print current status" \
-      "switch:switch to a different user, and nuke the current state" \
-      "track:verify a user's authenticity and optionally track them" \
-      "untrack:untrack this user" \
-      "update:update the keybase client software" \
-      "verify:verify a file" \
+  subcommand)
+    local -a subcommands
+    subcommands=(
+      "btc:add a signed cryptocurrency address to your profile"
+      "cert:print out the CA cert the client uses to authorize HTTPS connections"
+      "dir:sign or verify a directory's contents"
+      "config:make an initial configuration file"
+      "decrypt:decrypt a file"
+      "encrypt:encrypt a message and output to stdout or a file"
+      "help:display help"
+      "id:Identify a user, but do not accept or reject trust"
+      "join:establish a new account on keybase.io"
+      "keygen:generate a new PGP public key and optionally push it to the server"
+      "list-signatures:list of your non-revoked signatures"
+      "list-tracking:list people you are tracking"
+      "login:establish a session"
+      "logout:logout from the server"
+      "pull:pull your public (& private, if possible) key(s) from the server"
+      "push:push a PGP key from the client to the server"
+      "prove:add a proof of identity"
+      "reset:reset the local setup, deleting all local cached state"
+      "revoke:revoke the currently active PGP keys"
+      "revoke-signatures:revoke a proof or signature"
+      "search:search all users"
+      "sign:sign a message"
+      "status:print current status"
+      "switch:switch to a different user, and nuke the current state"
+      "track:verify a user's authenticity and optionally track them"
+      "untrack:untrack this user"
+      "update:update the keybase client software"
+      "verify:verify a file"
       "version:output version information about this client"
     )
-    _describe -t commands 'command' commands && ret=0
+    _describe -t subcommands 'command' subcommands && ret=0
     ;;
   args)
     case $line[1] in
@@ -239,9 +244,10 @@ case $state in
         )
         ;;
       search)
-        _arguments \
-          "(-i --no-installed)"{-i,--no-installed}"[Check for installed gem]" \
-          && ret=0
+        _command_args=(
+          '(--verbose)--verbose[a full dump, with more gory details]' \
+          '(--json)--json[output in json format; default is simple text list]' \
+        )
         ;;
       sign)
         _command_args=(
@@ -308,11 +314,8 @@ case $state in
     ;;
 esac
 
-_global_args=($(keybase advanced | grep '^\s*--' | sed -r 's/^[\t ]*(--[^\t ,]+)( [^\t ,]*)?,? ?(--?[^\t ]+)?[\t ]*(.*)$/(\3)\1[\4]/'))
-
 _arguments \
   $_command_args \
-  $_global_args \
   && ret=0
 
 return ret
