@@ -1,12 +1,9 @@
 #compdef keybase
 #autoload
 
-## Source:
 # keybase completion, based on cli help text
 # https://github.com/rbirnie/oh-my-zsh-keybase
 
-
-## License:
 # The MIT License (MIT)
 # 
 # Copyright (c) 2014 David Tiersch
@@ -29,21 +26,22 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-local curcontext="$curcontext" state line ret=1 IFS=$'\n'
+local curcontext="$curcontext" state line ret=1
+local -a _command_args
 local -a _global_args
 
+local IFS=$'\n'
 _global_args=($(keybase advanced | grep '^\s*--' | sed -r 's/^[\t ]*(--[^\t ,]+)( [^\t ,]*)?,? ?(--?[^\t ]+)?[\t ]*(.*)$/(\3)\1[\4]/'))
 
-_arguments \
-  ':subcommand:->subcommand' \
+_arguments -C -A "-v" -A "--version"\
+  '(- 1 *)'{-v,--version}'[display version information]' \
+  '1: :->cmds' \
   $_global_args \
-  '*::arg:->args' \
-  && ret=0
+  '*:: :->args' && ret=0
 
 case $state in
-  subcommand)
-    local -a subcommands
-    subcommands=(
+  cmds)
+    _command_args=(
       "btc:add a signed cryptocurrency address to your profile"
       "cert:print out the CA cert the client uses to authorize HTTPS connections"
       "dir:sign or verify a directory's contents"
@@ -74,7 +72,7 @@ case $state in
       "verify:verify a file"
       "version:output version information about this client"
     )
-    _describe -t subcommands 'command' subcommands && ret=0
+    _describe -t subcommands 'Keybase subcommands' subcommands && ret=0
     ;;
   args)
     case $line[1] in
