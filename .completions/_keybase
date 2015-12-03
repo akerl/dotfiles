@@ -29,6 +29,7 @@
 local curcontext="$curcontext" state line ret=1
 local -a _command_args
 local -a _global_args
+local -a _subcommands
 
 local IFS=$'\n'
 _global_args=($(keybase advanced | grep '^\s*--' | sed -r 's/^[\t ]*(--[^\t ,]+)( [^\t ,]*)?,? ?(--?[^\t ]+)?[\t ]*(.*)$/(\3)\1[\4]/'))
@@ -41,7 +42,7 @@ _arguments -C -A "-v" -A "--version"\
 
 case $state in
   cmds)
-    _command_args=(
+    _subcommands=(
       "btc:add a signed cryptocurrency address to your profile"
       "cert:print out the CA cert the client uses to authorize HTTPS connections"
       "dir:sign or verify a directory's contents"
@@ -72,7 +73,7 @@ case $state in
       "verify:verify a file"
       "version:output version information about this client"
     )
-    _describe -t subcommands 'Keybase subcommands' subcommands && ret=0
+    _describe -t subcommands 'Keybase subcommands' _subcommands && ret=0
     ;;
   args)
     case $line[1] in
