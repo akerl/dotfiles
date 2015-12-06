@@ -14,11 +14,3 @@ ALLOW_IP            resolve
 GPG_RECIPIENT       miro
 SPA_SERVER          69.164.217.166
 
-[grego]
-GPG_RECIPIENT       grego
-SPA_SERVER          50.116.33.15
-
-[olhado]
-GPG_RECIPIENT       olhado
-SPA_SERVER          173.255.193.119
-
