@@ -15,6 +15,6 @@ function socat_tunnel {
     if [ -z "$ssh_command" ] ; then
         ssh_command=ssh
     fi
-    echo "Opening tunnel to $1:$2 on localhost:$3"
+    echo "Opening tunnel through $tunnel_host to $target_host:$dest_port on localhost:$local_port"
     socat "TCP4-LISTEN:$local_port,fork" EXEC:"$ssh_command $tunnel_host nc $target_host $dest_port"
 }
