@@ -141,6 +141,8 @@ autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab nolist
 autocmd FileType go setlocal ts=4 sts=4 sw=4 noexpandtab nolist
 " Use markdown for .md files
 autocmd BufRead,BufNewFile *.md set filetype=markdown
+" Use ruby for .prospectus files
+autocmd BufRead,BufNewFile .prospectus set filetype=ruby
 " }}}
 " Plugins {{{
 """"
