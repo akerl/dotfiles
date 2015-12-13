@@ -1,3 +1,7 @@
+if [ ! -e /opt/boxen/rbenv ] ; then return ; fi
+
+export PATH="/opt/boxen/rbenv/shims:${PATH}"
+source "/opt/boxen/rbenv/libexec/../completions/rbenv.zsh"
 rbenv rehash 2>/dev/null || return
 
 rbenv() {
