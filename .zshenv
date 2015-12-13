@@ -13,6 +13,8 @@ if [ "$(uname)" = "Darwin" ] ; then
         PATH="$HOME/.rbenv/shims/:$PATH"
         PATH="/usr/local/brew/bin:/usr/local/brew/sbin:$PATH"
     fi
+    export SKIP_PYENV_INIT=1
+    export SKIP_RBENV_INIT=1
     source ~/.profile
     [ -f /opt/boxen/rbenv/completions/rbenv.zsh ] && source /opt/boxen/rbenv/completions/rbenv.zsh
     PATH="/usr/local/bin:/usr/local/sbin:$PATH"
