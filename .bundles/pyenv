@@ -1,4 +1,4 @@
-if [ ! -e /opt/boxen/pyenv ] ;; then return ; fi
+if [[ ! -e /opt/boxen/pyenv ]] ; then return ; fi
 
 export PATH="/opt/boxen/pyenv/shims:${PATH}"
 export PYENV_SHELL=zsh
