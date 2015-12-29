@@ -1,12 +1,9 @@
-[submodule ".vim/bundle/vundle"]
-	path = .vim/bundle/vundle
-	url = https://github.com/gmarik/vundle.git
 [submodule ".vim/bundle/Vundle.vim"]
 	path = .vim/bundle/Vundle.vim
-	url = https://github.com/gmarik/Vundle.vim.git
+	url = https://github.com/gmarik/Vundle.vim
 [submodule ".bin"]
 	path = .bin
-	url = git://github.com/akerl/scripts.git
+	url = git://github.com/akerl/scripts
 [submodule ".puppetlabs/opt/puppet/cache/puppet-module"]
 	path = .puppetlabs/opt/puppet/cache/puppet-module
 	url = git://github.com/halyard/puppet-module-skeleton
