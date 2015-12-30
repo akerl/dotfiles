@@ -5,7 +5,7 @@ submodules.each do |path, repo|
   repo_name = repo.split('.com/').last
 
   item do
-    name "dotfiles::#{repo}"
+    name "dotfiles::#{repo_name}"
 
     expected do
       github_hash
