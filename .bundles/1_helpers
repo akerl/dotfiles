@@ -25,7 +25,9 @@ alias map="xargs -n1"
 alias mapp="xargs -n1 -I{}"
 
 function ff () {
-    find . -name "$1" | grep $@
+    local filename="$1"
+    shift 1
+    find . -name "$filename" | xargs grep $@
 }
 
 function kgpg () {
