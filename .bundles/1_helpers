@@ -24,6 +24,10 @@ alias gcm='git checkout master'
 alias map="xargs -n1"
 alias mapp="xargs -n1 -I{}"
 
+function ff () {
+    find . -name "$1" | grep $@
+}
+
 function kgpg () {
     ps aux | awk '/[g]pg-agent --daemon/ {print $2}' | xargs kill -9
     [[ -e ~/.bundles/gpg-agent ]] && source ~/.bundles/gpg-agent
