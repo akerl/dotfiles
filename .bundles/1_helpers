@@ -47,4 +47,4 @@ function ssh-reagent () {
     done
 }
 
-alias allprop="find ~/src -name '.prospectus*' -maxdepth 3 | xargs dirname | xargs -n1 prospectus -t -d"
+alias allprop="find ~/src -name '.prospectus*' -maxdepth 3 | xargs dirname | xargs -n1 prospectus -d"
