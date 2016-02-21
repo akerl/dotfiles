@@ -159,6 +159,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'rodjek/vim-puppet'
 Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-fugitive'
+Plugin 'altercation/vim-colors-solarized'
 call vundle#end()
 " }}}
 " DetectIndent {{{
