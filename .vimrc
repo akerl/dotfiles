@@ -41,11 +41,6 @@ nnoremap <Leader>q :x<CR>
 " }}}
 " Display {{{
 """"
-" Set solarized theme
-set background=dark
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-colorscheme solarized
 " Adjust selection highlight color
 highlight Visual ctermbg=Black ctermfg=Cyan
 " Show syntax highlighting
@@ -161,6 +156,14 @@ Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-fugitive'
 Plugin 'altercation/vim-colors-solarized'
 call vundle#end()
+" }}}
+" Theme {{{
+""""
+" Set solarized theme
+set background=dark
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+colorscheme solarized
 " }}}
 " DetectIndent {{{
 """"
