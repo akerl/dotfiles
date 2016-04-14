@@ -22,6 +22,7 @@ alias gtp='git push --tags'
 alias gdc='git diff --cached'
 alias gcm='git checkout master'
 alias gt='git fetch --tags origin'
+alias gg='git gem'
 
 alias map="xargs -n1"
 alias mapp="xargs -n1 -I{}"
