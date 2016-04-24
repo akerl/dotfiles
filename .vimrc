@@ -155,6 +155,7 @@ Plugin 'rodjek/vim-puppet'
 Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-fugitive'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'ledger/vim-ledger'
 call vundle#end()
 " }}}
 " Theme {{{
