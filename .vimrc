@@ -138,6 +138,8 @@ autocmd FileType go setlocal ts=4 sts=4 sw=4 noexpandtab nolist
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 " Use ruby for .prospectus files
 autocmd BufRead,BufNewFile .prospectus set filetype=ruby
+" Use ledger for .ldg files
+autocmd BufRead,BufNewFile *.ldg set filetype=ledger | compiler ledger
 " }}}
 " Plugins {{{
 """"
