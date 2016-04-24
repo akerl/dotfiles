@@ -140,7 +140,6 @@ autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile .prospectus set filetype=ruby
 " Use ledger for .ldg files
 autocmd BufRead,BufNewFile *.ldg set filetype=ledger | compiler ledger
-autocmd BufWritePre *.ldg %LedgerAlign
 " }}}
 " Plugins {{{
 """"
@@ -181,5 +180,9 @@ set laststatus=2
 " }}}
 " Ruby {{{
 let g:ruby_path = $RBENV_PATH
+" }}}
+" Ledger {{{
+nnoremap <F4> :%LedgerAlign<CR>
+vnoremap <F4> :LedgerAlign<CR>
 " }}}
 " vim:foldmethod=marker:foldlevel=0
