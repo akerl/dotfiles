@@ -1,1 +1,3 @@
 --file ~/src/akerl/accounting/core.ldg
+--strict
+--check-payees
