@@ -1,3 +1,5 @@
 --file ~/src/akerl/accounting/core.ldg
 --strict
+--pedantic
+--explicit
 --check-payees
