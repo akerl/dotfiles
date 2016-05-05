@@ -1,0 +1,5 @@
+command -v ledger >/devnull || return
+
+alias led=ledger
+alias bal='ledger -C bal'
+alias prj='ledger bal Assets:Checking:simple'
