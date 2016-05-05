@@ -1,4 +1,4 @@
-command -v ledger >/devnull || return
+command -v ledger >/dev/null || return
 
 alias led=ledger
 alias bal='ledger -C bal'
