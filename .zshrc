@@ -4,8 +4,8 @@ CASE_SENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
 
 HISTFILE=$HOME/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=1000000
+SAVEHIST=$HISTSIZE
 
 setopt append_history
 setopt extended_history
