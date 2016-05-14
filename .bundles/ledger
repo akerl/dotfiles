@@ -1,5 +1,5 @@
 command -v ledger >/dev/null || return
 
-alias led=ledger
-alias bal='ledger -C bal'
-alias prj='ledger reg Assets:Checking:simple Liabilities'
+alias led="ledger --file $HOME/src/akerl/accounting/core.ldg --strict --pedantic --explicit --check-payees"
+alias bal='led -C bal'
+alias prj='led reg Assets:Checking:simple Liabilities'
