@@ -45,5 +45,7 @@ alias pmg="puppet module generate"
 
 export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
 
+export REQUESTS_CA_BUNDLE=/opt/boxen/homebrew/etc/openssl/cert.pem
+
 umask 022
 
