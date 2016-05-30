@@ -6,7 +6,7 @@ alias v=vim
 alias l='ls -la'
 alias a=ag
 
-alias rs="pushd ~/src ; repo_sync ; popd"
+alias rs="(cd ~/src && repo_sync)"
 
 alias gs='git status'
 alias gd='git diff'
