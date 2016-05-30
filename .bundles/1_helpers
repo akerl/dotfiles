@@ -6,6 +6,8 @@ alias v=vim
 alias l='ls -la'
 alias a=ag
 
+alias rs="pushd ~/src ; repo_sync ; popd"
+
 alias gs='git status'
 alias gd='git diff'
 alias gc='git commit'
