@@ -15,5 +15,5 @@ function aj () {
     if [ -z "$year" ] ; then
         year="$(date +%Y)"
     fi
-    vim "~/src/akerl/accounting/journals/$year/$month.ldg"
+    vim ~/src/akerl/accounting/journals/$year/$month.ldg
 }
