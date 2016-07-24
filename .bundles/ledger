@@ -3,3 +3,17 @@ command -v ledger >/dev/null || return
 alias led=ledger
 alias bal='ledger -C bal'
 alias prj='ledger reg Assets:Checking:simple Liabilities'
+
+function aj () {
+    local month="$1"
+    if [ -z "$month" ] ; then
+        month="$(date +'%m')"
+    fi
+    month="$(printf %02d $month)"
+
+    local year="$2"
+    if [ -z "$year" ] ; then
+        year="$(date +%Y)"
+    fi
+    vim "~/src/akerl/accounting/journals/$year/$month"
+}
