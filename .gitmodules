@@ -4,6 +4,3 @@
 [submodule ".bin"]
 	path = .bin
 	url = git://github.com/akerl/scripts
-[submodule ".puppetlabs/opt/puppet/cache/puppet-module"]
-	path = .puppetlabs/opt/puppet/cache/puppet-module
-	url = git://github.com/halyard/puppet-module-skeleton
