@@ -10,7 +10,3 @@ ACCESS              tcp/20
 ALLOW_IP            resolve
 #RESOLVE_URL        http://icanhazip.com
 
-[miro]
-GPG_RECIPIENT       miro
-SPA_SERVER          69.164.217.166
-

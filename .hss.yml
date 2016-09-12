@@ -2,27 +2,19 @@
 patterns:
     -   note: cluster
         example: m -> akerl@miro.a-rwx.org -p20 (guest)
-        short: '^([mgoeq])$'
+        short: '^([o])$'
         long: '-p20 -A4 -oTCPKeepAlive=no #{shortcut("unsigned")} akerl@#{expand($1)}.a-rwx.org'
     -   note: cluster dock0
         example: mr -> root@miro.a-rwx.org
-        short: '^([mgoeq])r$'
+        short: '^([o])r$'
         long: '-A4 -oTCPKeepAlive=no #{shortcut("unsigned")} root@#{expand($1)}.a-rwx.org'
     -   note: lish
         example: ld -> akerl@lish-dallas.linode.com
         short: '^l([dfantlsg])$'
         long: '-4 akerl@lish-#{expand("dc-#{$1}")}.linode.com'
 expansions:
-    miro:
-        - m
     olhado:
         - o
-    grego:
-        - g
-    ela:
-        - e
-    quara:
-        - q
     dallas:
         - dc-d
     fremont:
