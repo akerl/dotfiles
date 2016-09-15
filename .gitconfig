@@ -46,3 +46,5 @@
     excludesfile = /opt/boxen/config/git/gitignore
 [status]
     submoduleSummary = true
+[diff]
+    compactionHeuristic = true
