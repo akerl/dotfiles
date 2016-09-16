@@ -1,15 +1,14 @@
 ---
 patterns:
-- note: irc
-  example: m -> akerl@irc-node -p20 (guest)
+- note: IRC node
+  example: m -> akerl@irc-node
   short: '^m$'
-  long: '-p20 -oTCPKeepAlive=no akerl@#{expand("irc")}'
-- note: irc root
+  long: '-p20 -oTCPKeepAlive=no akerl@#{shortcut("irc")}'
+- note: IRC host
   example: mr -> root@irc-node
   short: '^mr$'
-  long: '-oTCPKeepAlive=no root@#{expand("irc")}'
-expansions:
-  irc:
-  - 52.45.144.244
+  long: '-oTCPKeepAlive=no root@#{shortcut("irc")}'
+shortcuts:
+  irc: 52.45.144.244
 ...
 
