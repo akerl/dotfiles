@@ -1,37 +1,15 @@
 ---
 patterns:
-    -   note: cluster
-        example: m -> akerl@miro.a-rwx.org -p20 (guest)
-        short: '^([o])$'
-        long: '-p20 -A4 -oTCPKeepAlive=no #{shortcut("unsigned")} akerl@#{expand($1)}.a-rwx.org'
-    -   note: cluster dock0
-        example: mr -> root@miro.a-rwx.org
-        short: '^([o])r$'
-        long: '-A4 -oTCPKeepAlive=no #{shortcut("unsigned")} root@#{expand($1)}.a-rwx.org'
-    -   note: lish
-        example: ld -> akerl@lish-dallas.linode.com
-        short: '^l([dfantlsg])$'
-        long: '-4 akerl@lish-#{expand("dc-#{$1}")}.linode.com'
+- note: irc
+  example: m -> akerl@irc-node -p20 (guest)
+  short: '^m$'
+  long: '-p20 -oTCPKeepAlive=no akerl@#{expand("irc")}'
+- note: irc root
+  example: mr -> root@irc-node
+  short: '^mr$'
+  long: '-oTCPKeepAlive=no root@#{expand("irc")}'
 expansions:
-    olhado:
-        - o
-    dallas:
-        - dc-d
-    fremont:
-        - dc-f
-    atlanta:
-        - dc-a
-    newark:
-        - dc-n
-    london:
-        - dc-l
-    tokyo:
-        - dc-t
-    singapore:
-        - dc-s
-    frankfurt:
-        - dc-g
-shortcuts:
-    unsigned: '-oUserKnownHostsFile=/dev/null -oStrictHostKeyChecking=no'
+  irc:
+  - 52.45.144.244
 ...
 
