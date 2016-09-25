@@ -49,3 +49,5 @@ alias p=pry
 alias irb=pry
 
 alias tf=terraform
+alias tfa='terraform apply'
+alias tfp='terraform plan'
