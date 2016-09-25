@@ -47,3 +47,5 @@ function dv () { [ -n "$VIRTUAL_ENV" ] && deactivate ; }
 
 alias p=pry
 alias irb=pry
+
+alias tf=terraform
