@@ -47,10 +47,8 @@ export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
 
 export REQUESTS_CA_BUNDLE=/opt/boxen/homebrew/etc/openssl/cert.pem
 
-export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_EMOJI=1
-export HOMEBREW_BUILD_FROM_SOURCE=1
 
 umask 022
 
