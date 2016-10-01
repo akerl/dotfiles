@@ -1,9 +1,0 @@
-#compdef ds
-which docker &>/dev/null || return
-
-_describe 'ds' "($(\
-    docker ps --no-trunc | \
-    awk '!/^CONTAINER/ { print $NF ":" $2 "__" $1 }' | \
-    sed 's/^\(.*\)__\(.*\)$/"\1 \2"/' \
-    ))"
-

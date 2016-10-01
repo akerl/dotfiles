@@ -1,8 +1,0 @@
-{
-	"name": "Default color scheme for terminal prompts",
-	"groups": {
-		"date": { "fg": "white", "bg": "darkestblue" },
-		"time": { "fg": "white", "bg": "darkestblue" },
-		"time:divider": { "fg": "white", "bg": "darkestblue" }
-	}
-}
