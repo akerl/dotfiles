@@ -35,6 +35,7 @@
 [alias]
     co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
     yolo = !sh -c 'git commit -a -m "`curl -s http://whatthecommit.com/index.txt`"'
+    patch = --no-pager diff --no-color
 
 [hub]
     protocol = https
@@ -44,6 +45,7 @@
 
 [core]
     excludesfile = /opt/boxen/config/git/gitignore
+    pager = diff-so-fancy | less --tabs=4 -RFX
 [status]
     submoduleSummary = true
 [diff]
