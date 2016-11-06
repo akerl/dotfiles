@@ -1,14 +1,33 @@
-[push]
-    default = current
-[user]
-    name = Les Aker
-    email = me@lesaker.org
-[color]
-    ui = auto
-[merge]
-    ff = only
+[core]
+    excludesfile = ~/.global_gitignore
+    pager = diff-so-fancy | less --tabs=4 -RFX
+
+[alias]
+    co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
+    patch = !git --no-pager diff --no-color
+    yolo = !sh -c 'git commit -a -m "`curl -s http://whatthecommit.com/index.txt`"'
+
+[commit]
+    gpgSign = true
+    template = ~/.gitmessage
+
+[diff]
+    compactionHeuristic = true
+
 [help]
     autocorrect = 1
+
+[merge]
+    ff = only
+
+[push]
+    default = current
+
+[status]
+    submoduleSummary = true
+
+[tag]
+    forceSignAnnotated = true
 
 [url "git@github.com:"]
     insteadOf = "gh:"
@@ -26,27 +45,11 @@
 [url "git://gist.github.com/"]
     insteadOf = "gist:"
 
-[git-up "fetch"]
-    prune = false
+[user]
+    name = Les Aker
+    email = me@lesaker.org
+    signingkey = <FILLMEIN>
 
-[commit]
-    template = ~/.gitmessage
+[versionsort]
+    prereleaseSuffix = -rc
 
-[alias]
-    co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
-    yolo = !sh -c 'git commit -a -m "`curl -s http://whatthecommit.com/index.txt`"'
-    patch = --no-pager diff --no-color
-
-[hub]
-    protocol = https
-
-[credential]
-    helper = /opt/boxen/bin/boxen-git-credential
-
-[core]
-    excludesfile = /opt/boxen/config/git/gitignore
-    pager = diff-so-fancy | less --tabs=4 -RFX
-[status]
-    submoduleSummary = true
-[diff]
-    compactionHeuristic = true
