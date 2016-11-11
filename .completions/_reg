@@ -1,4 +1,0 @@
-#compdef reg
-
-_describe 'reg' "($(ledger accounts | sed 's/:/\\:/g;s/^/"/;s/$/"/'))"
-

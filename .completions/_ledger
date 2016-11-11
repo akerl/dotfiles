@@ -1,0 +1,4 @@
+#compdef ledger
+
+_describe 'ledger' "($(ledger accounts | sed 's/:/\\:/g;s/^/"/;s/$/"/'))"
+
