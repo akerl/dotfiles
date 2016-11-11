@@ -3,5 +3,5 @@
 --pedantic
 --explicit
 --check-payees
---pager less -p^$(date +%Y-%m-)
+--pager less +G
 --date-format %Y-%m-%d
