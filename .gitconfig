@@ -48,7 +48,7 @@
 [user]
     name = Les Aker
     email = me@lesaker.org
-    signingkey = <FILLMEIN>
+    signingkey = 0x49164EC50535DBED
 
 [versionsort]
     prereleaseSuffix = -rc
