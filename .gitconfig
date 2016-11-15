@@ -53,3 +53,5 @@
 [versionsort]
     prereleaseSuffix = -rc
 
+[include]
+    path = ~/.gitconfig.d/local
