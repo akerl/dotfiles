@@ -1,3 +1,13 @@
+alias d='docker'
+alias z=ssh
+alias c=hss
+alias ccp='scp -S hss'
+export HSS_PASS='ssh'
+
+export GOPATH=$HOME/.go
+
+export REQUESTS_CA_BUNDLE=/opt/boxen/homebrew/etc/openssl/cert.pem
+
 alias cld='cd;clear'
 alias atree='tree -a -I ".git"'
 alias ta='tmux attach -d'
