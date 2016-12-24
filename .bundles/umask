@@ -1,0 +1,3 @@
+## Set umask
+
+umask 022

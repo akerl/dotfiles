@@ -15,8 +15,6 @@ if [ "$(uname)" = "Darwin" ] ; then
     fi
     export SKIP_PYENV_INIT=1
     export SKIP_RBENV_INIT=1
-    source ~/.profile
-    [ -f /opt/boxen/rbenv/completions/rbenv.zsh ] && source /opt/boxen/rbenv/completions/rbenv.zsh
     PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 elif [ -e /etc/arch-release ] ; then
     PATH="$HOME/.bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl"

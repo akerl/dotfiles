@@ -1,45 +1,25 @@
 if [ "$(uname)" = "Darwin" ]; then return ; fi
 
+## Colorize ls output
+
 alias ls='ls --color=auto'
 eval `dircolors -b`
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
+## Alias for gisting
+## (separate per OS because on Mac I default to auto-clipboarding URL)
+
 alias g='gist'
+
+## Linux-specific aliases
+
 alias s='systemctl'
-alias d='docker'
+
+## Set fpath for completions
 
 fpath=(~/.completions $fpath)
 
-function dc() {
-    docker ps -a | awk '!/^CONT/ {print $1}' | xargs docker rm
-    docker images | awk '!/^REPO/ {print $3}' | xargs docker rmi -f
-}
-
-function ds() {
-    if [ -z "$1" ] ; then
-        label="$(docker ps | tail -1 | awk '{print $(NF)}')"
-    else
-        label="$1"
-    fi
-    pid="$(docker inspect --format '{{.Id}}' $label)"
-    if [ -z "$2" ] ; then
-        cmd="/bin/bash"
-    else
-        cmd="$2"
-    fi
-    (
-        cd /var/lib/docker/execdriver/native/$pid
-        nsinit exec $cmd
-    )
-}
-
-export TZ='US/Eastern'
-
-umask 022
+## Unset SSH_ASKPASS to avoid broken SSH key passphrase prompting
 
 unset SSH_ASKPASS
-
-if [ "$COLORTERM" = 'xfce4-terminal' ] ; then
-    export TERM=xterm-256color
-fi
 

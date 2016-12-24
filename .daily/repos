@@ -1,6 +1,0 @@
-#!/usr/bin/env zsh -i
-
-for i in spaarti rs ddd ; do
-    echo "Running ${i}"
-    $i
-done
