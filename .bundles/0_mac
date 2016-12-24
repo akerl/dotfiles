@@ -25,10 +25,6 @@ alias cask="brew cask"
 
 alias g='gist -c'
 
-## Use gpg-agent for SSH
-
-export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
-
 ## Disable homebrew emoji and analytics
 
 export HOMEBREW_NO_ANALYTICS=1

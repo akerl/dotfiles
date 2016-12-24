@@ -3,3 +3,4 @@ if [ "$(uname)" != "Darwin" ]; then return ; fi
 
 /usr/bin/env gpg-agent --daemon --log-file ~/.gnupg/logfile &> /dev/null
 
+export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh

@@ -2,7 +2,6 @@ export MARKPATH="$HOME/.marks"
 export MARKDEFAULT='main'
 mkdir -p "$MARKPATH"
 
-
 function jump {
     if [ -z "$1" ] ; then
         target="$MARKDEFAULT"
@@ -45,7 +44,6 @@ function lsmarks {
     offset="$(ls -1 "$MARKPATH" | awk '{print length($0)}' | sort -nr | head -1)"
     ls -l "$MARKPATH" | awk '/->/ {printf "%-'$offset's -> %s\n", $(NF-2), $(NF)}'
 }
-
 
 alias j='jump'
 alias m='mark'
