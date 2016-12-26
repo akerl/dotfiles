@@ -11,6 +11,8 @@ if [ "$(uname)" = "Darwin" ] ; then
     done
     export SKIP_PYENV_INIT=1
     export SKIP_RBENV_INIT=1
+    ## TODO: remove boxen callout
+    source /opt/boxen/env.sh
     PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 elif [ -e /etc/arch-release ] ; then
     PATH="$HOME/.bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl"
