@@ -36,6 +36,10 @@ alias gcm='git checkout master'
 alias gt='git fetch --tags origin'
 alias gg='git gem'
 
+function gts() {
+    git tag -s -m "$1" "$1"
+}
+
 alias map="xargs -n1"
 alias mapp="xargs -n1 -I{}"
 
