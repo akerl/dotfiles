@@ -1,4 +1,4 @@
 #compdef gts
 
-_describe 'gts' "(${git tag)}"
+_describe 'gts' "($(git tag 2>/dev/null || true))"
 
