@@ -20,4 +20,4 @@ alias gg='git gem'
 function gts() {
     git tag -s -m "$1" "$1"
 }
-
+compdef _git-tag gts
