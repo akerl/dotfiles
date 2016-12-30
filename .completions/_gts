@@ -1,1 +1,4 @@
-#compdef _git-tag gts
+#compdef gts
+
+_describe 'gts' "(${git tag)}"
+
