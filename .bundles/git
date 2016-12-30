@@ -1,0 +1,23 @@
+# Add git aliases
+
+alias gs='git status'
+alias gd='git diff'
+alias gc='git commit'
+alias gp='git push'
+alias ga='git add'
+alias gr='git remote -v'
+alias gl='git log'
+alias gi='git issue'
+alias gsu="git submodule foreach 'git pull origin master && git submodule update --init --recursive'"
+alias gsi='git submodule update --init'
+alias gpr='git pull --rebase'
+alias gtp='git push --tags'
+alias gdc='git diff --cached'
+alias gcm='git checkout master'
+alias gt='git fetch --tags origin'
+alias gg='git gem'
+
+function gts() {
+    git tag -s -m "$1" "$1"
+}
+

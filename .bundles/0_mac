@@ -20,6 +20,8 @@ alias issues="open 'https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Ais
 
 alias cask="brew cask"
 
+alias rs="(cd ~/src && repo_sync)"
+
 ## Mac-specific gist alias
 ## (Different from Linux because I auto-copy to clipboard)
 

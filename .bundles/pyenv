@@ -21,3 +21,6 @@ pyenv() {
     command pyenv "$command" "$@";;
   esac
 }
+
+export REQUESTS_CA_BUNDLE=/opt/boxen/homebrew/etc/openssl/cert.pem
+

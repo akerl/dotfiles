@@ -1,0 +1,22 @@
+# Add generic aliases
+
+alias cld='cd;clear'
+alias atree='tree -a -I ".git"'
+alias ta='tmux attach -d'
+alias v=vim
+alias l='ls -la'
+alias a=ag
+
+alias map="xargs -n1"
+alias mapp="xargs -n1 -I{}"
+
+function ff () {
+    local filename="$1"
+    shift 1
+    find . -name "$filename" | xargs grep $@
+}
+
+alias ddd='~/.../... update && ~/.../... install'
+
+alias d=docker
+

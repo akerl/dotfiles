@@ -4,3 +4,8 @@ if [ "$(uname)" != "Darwin" ]; then return ; fi
 /usr/bin/env gpg-agent --daemon --log-file ~/.gnupg/logfile &> /dev/null
 
 export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
+
+function kgpg () {
+    ps aux | awk '/[g]pg-agent --daemon/ {print $2}' | xargs kill -9
+    [[ -e ~/.bundles/gpg-agent ]] && source ~/.bundles/gpg-agent
+}
