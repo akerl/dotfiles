@@ -5,7 +5,7 @@ alias atree='tree -a -I ".git"'
 alias ta='tmux attach -d'
 alias v=vim
 alias l='ls -la'
-alias a=ag
+alias a=rg
 
 alias map="xargs -n1"
 alias mapp="xargs -n1 -I{}"
