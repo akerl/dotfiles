@@ -11,6 +11,7 @@ if [ "$(uname)" = "Darwin" ] ; then
         fi
     done
     PATH="/opt/brew/bin:/opt/brew/sbin:$PATH"
+    PATH="/opt/asdf/bin:/opt/asdf/shims:$PATH"
     PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 elif [ -e /etc/arch-release ] ; then
     PATH="$HOME/.bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl"
