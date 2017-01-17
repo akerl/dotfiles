@@ -5,16 +5,14 @@ if [ "$(uname)" = "Darwin" ] ; then
     PATH="$HOME/.bin"
     PATH="$PATH:/usr/bin:/usr/sbin:/bin:/sbin"
     for pkg in coreutils gnu-tar gnu-sed ; do
-        if [ -e /opt/boxen/homebrew/opt/$pkg/libexec/gnubin ] ; then
-            PATH="/opt/boxen/homebrew/opt/$pkg/libexec/gnubin:$PATH"
+        new_path=/opt/brew/opt/$pkg/libexec/gnubin 
+        if [ -e $new_path ] ; then
+            PATH="$new_path:$PATH"
         fi
     done
-    export SKIP_PYENV_INIT=1
-    export SKIP_RBENV_INIT=1
-    ## TODO: remove boxen callout
-    source /opt/boxen/env.sh
+    PATH="/opt/brew/bin:/opt/brew/sbin:$PATH"
     PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-elif [ -e /etc/arch-release ] ; then
+elif [ -e /etc/arch-release ] ; the
     PATH="$HOME/.bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl"
 else
     PATH="$HOME/.bin:$HOME/.gem/ruby/1.8/bin"
