@@ -10,6 +10,7 @@ if [ "$(uname)" = "Darwin" ] ; then
             PATH="$new_path:$PATH"
         fi
     done
+    [ -e /opt/boxen/env.sh ] && source /opt/boxen/env.sh
     PATH="/opt/brew/bin:/opt/brew/sbin:$PATH"
     PATH="/opt/asdf/bin:/opt/asdf/shims:$PATH"
     PATH="/usr/local/bin:/usr/local/sbin:$PATH"
