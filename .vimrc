@@ -178,6 +178,10 @@ let g:detectindent_preferred_indent = 4
 let g:airline_powerline_fonts = 1
 set laststatus=2
 " }}}
+" Go {{{
+""""
+let g:go_template_autocreate = 0
+" }}}
 " Ruby {{{
 let g:ruby_path = $RBENV_PATH
 " }}}
