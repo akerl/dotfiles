@@ -143,22 +143,8 @@ autocmd BufRead,BufNewFile *.ldg set filetype=ledger | compiler ledger
 " }}}
 " Plugins {{{
 """"
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/Vundle.vim'
-Plugin 'bling/vim-airline'
-Plugin 'honza/dockerfile.vim'
-Plugin 'vim-scripts/nginx.vim'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'vim-scripts/DetectIndent'
-Plugin 'godlygeek/tabular'
-Plugin 'rodjek/vim-puppet'
-Plugin 'fatih/vim-go'
-Plugin 'tpope/vim-fugitive'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'ledger/vim-ledger'
-call vundle#end()
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
 " }}}
 " Theme {{{
 """"
