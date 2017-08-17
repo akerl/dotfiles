@@ -34,3 +34,6 @@
 [submodule ".vim/bundle/dockerfile.vim"]
 	path = .vim/bundle/dockerfile.vim
 	url = git://github.com/honza/dockerfile.vim
+[submodule ".vim/bundle/vim-terraform"]
+	path = .vim/bundle/vim-terraform
+	url = https://github.com/hashivim/vim-terraform.git
