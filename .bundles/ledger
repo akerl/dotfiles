@@ -1,7 +1,7 @@
 command -v ledger >/dev/null || return
 
 alias led=ledger
-alias bal='ledger --no-pager -C bal Assets'
+alias bal='ledger --no-pager -C bal Assets Liabilities'
 alias freg='ledger --pager="less -p ^$(date +%Y-%m-)" -S date reg'
 alias prj='freg Assets:Checking:ally Liabilities'
 alias bills='freg Assets:Checking:jointally'
