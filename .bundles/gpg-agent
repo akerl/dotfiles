@@ -1,7 +1,9 @@
 # Based on ssh-agent code
 if [ "$(uname)" != "Darwin" ]; then return ; fi
 
-/usr/bin/env gpg-agent --daemon --log-file ~/.gnupg/logfile &> /dev/null
+PINENTRY=/usr/local/MacGPG2/libexec/pinentry-mac.app/Contents/MacOS/pinentry-mac
+
+/usr/bin/env gpg-agent --daemon --pinentry-program "$PINENTRY" &> /dev/null
 
 export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
 
