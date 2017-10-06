@@ -10,7 +10,7 @@ fpath=(~/.completions $basepath/zsh-completions $basepath/zsh/functions $basepat
 alias sha512sum='shasum -a 512'
 alias sha256sum='shasum -a 256'
 
-alias vgpg="GNUPGHOME=/Volumes/akerl-vault/gnupg gpg2"
+alias vgpg="GNUPGHOME=/Volumes/akerl-vault/gnupg gpg"
 alias keybase='GNUPGHOME=/Volumes/akerl-vault/gnupg keybase --standalone'
 
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
