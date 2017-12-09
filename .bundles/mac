@@ -32,3 +32,5 @@ alias g='gist -c'
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_EMOJI=1
 
+# Fix fork bug in Ruby on High Sierra
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
