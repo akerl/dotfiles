@@ -17,6 +17,12 @@ alias gcm='git checkout master'
 alias gt='git fetch --tags origin'
 alias gg='git gem'
 
+function gcs() {
+    url='https://git.io/vbBEf'
+    echo $url
+    [[ "$(uname)" == "Darwin" ]] && echoi -n $url | pbcopy
+}
+
 function gts() {
     git tag -s -m "$1" "$1"
 }
