@@ -4,4 +4,3 @@
 --explicit
 --check-payees
 --pager less +G
---date-format %Y-%m-%d
