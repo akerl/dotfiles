@@ -3,7 +3,7 @@ if [ "$(uname)" != "Darwin" ]; then return ; fi
 ## Set fpath for completions
 
 basepath="$(dirname $(which zsh))/../share"
-fpath=(~/.completions $basepath/zsh-completions $basepath/zsh/functions $basepath/zsh/site-functions)
+fpath=(~/.autoload $basepath/zsh-completions $basepath/zsh/functions $basepath/zsh/site-functions)
 
 ## Mac-specific aliases
 

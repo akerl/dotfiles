@@ -1,17 +1,14 @@
 [core]
-    excludesfile = ~/.global_gitignore
     pager = diff-so-fancy | less --tabs=4 -RFX
 
 [alias]
-    co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
     patch = !git --no-pager diff --no-color
-    yolo = !sh -c 'git commit -a -m "`curl -s http://whatthecommit.com/index.txt`"'
 
 [commit]
     template = ~/.gitmessage
 
 [diff]
-    compactionHeuristic = true
+    indentHeuristic = true
 
 [help]
     autocorrect = 1
@@ -44,7 +41,6 @@
 [user]
     name = Les Aker
     email = me@lesaker.org
-    signingkey = 0x49164EC50535DBED
 
 [versionsort]
     prereleaseSuffix = -rc
