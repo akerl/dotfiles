@@ -13,10 +13,11 @@ function _build_path() {
     if [ "$($uname)" = "Darwin" ] ; then
         local gnu_path=''
         for pkg in coreutils gnu-tar gnu-sed ; do
-            local gnu_dir=/opt/brew/opt/$pkg/libexec/gnubin 
-            [[ -e $gnu_dir ]] && gnu_path="$gnu_path:$gnu_dir"
+            gnu_path="$gnu_path:/opt/brew/opt/$pkg/libexec/gnubin"
         done
-        PATH="$HOME/.bin:$gnu_path:$BREW_PATHS:$LOCAL_PATHS:$ALL_BIN_PATHS"
+        local go_path="$HOME/.go/bin"
+        local ruby_path="$HOME/.rbenv/bin:$HOME/.rbenv/shims"
+        PATH="$HOME/.bin:$gnu_path:$go_path:$ruby_path:$BREW_PATHS:$LOCAL_PATHS:$ALL_BIN_PATHS"
     elif [ -e /etc/arch-release ] ; then
         PATH="$HOME/.bin:$LOCAL_PATHS:/usr/bin:/usr/bin/core_perl"
     else
