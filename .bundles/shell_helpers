@@ -18,3 +18,5 @@ function ff () {
 
 alias ddd='~/.../... update && ~/.../... install'
 
+alias ssl_doc="ruby ~/.tools/ssl-tools/doctor.rb"
+
