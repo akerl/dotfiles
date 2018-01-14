@@ -6,11 +6,6 @@ alias ls='ls --color=auto'
 eval `dircolors -b`
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-## Alias for gisting
-## (separate per OS because on Mac I default to auto-clipboarding URL)
-
-alias g='gist'
-
 ## Linux-specific aliases
 
 alias s='systemctl'

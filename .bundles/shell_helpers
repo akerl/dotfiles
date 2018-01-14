@@ -18,5 +18,3 @@ function ff () {
 
 alias ddd='~/.../... update && ~/.../... install'
 
-alias d=docker
-
