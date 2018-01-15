@@ -1,5 +1,6 @@
 export RBENV_SHELL=zsh
-source '/Users/akerl/.rbenv/libexec/../completions/rbenv.zsh'
+source ~/.rbenv/libexec/../completions/rbenv.zsh
+
 command rbenv rehash 2>/dev/null
 rbenv() {
   local command
