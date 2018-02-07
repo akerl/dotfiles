@@ -1,0 +1,14 @@
+function mfa () {
+    local arg="$1"
+    [[ -z "$arg" ]] && echo 'Usage: mfa NAME_OF_TOKEN' && return
+    echo 'Touch your yubikey now' >&2
+    code="$(ykman oath code "$arg" | awk '/ [0-9]+/ {print $2}')"
+    [[ -z "$code" ]] && echo 'Code not found' && return
+    echo "$code" | pbcopy
+    echo "$code"
+}
+
+function cache_mfa () {
+    mkdir -p ~/.cache/mfa
+    ykman oath list > ~/.cache/mfa/list
+}
