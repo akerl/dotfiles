@@ -12,7 +12,7 @@ alias s='systemctl'
 
 ## Set fpath for completions
 
-fpath=(~/.autoload $fpath)
+fpath=(~/.autoload ~/.completions $fpath)
 
 ## Unset SSH_ASKPASS to avoid broken SSH key passphrase prompting
 
