@@ -2,5 +2,5 @@
 
 : ${MFA_CACHE_FILE:=~/.cache/mfa/list}
 
-_describe 'mfa' "($(sed 's/:/\\:/g;s/^/"/;s/$/"/' "$MFA_CACHE_FILE")"
+_describe 'mfa' "($(sed 's/:/\\:/g;s/^/"/;s/$/"/' "$MFA_CACHE_FILE"))"
 
