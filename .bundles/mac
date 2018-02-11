@@ -20,6 +20,9 @@ alias issues="open 'https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Ais
 alias cask="brew cask"
 
 alias rs="(cd ~/src && repo_sync)"
+alias nt="tag_release y && gtp"
+alias ds="dep_sync && gc -am 'update deps' && gp"
+alias cs="sha256sum"
 
 ## Disable homebrew emoji and analytics
 
