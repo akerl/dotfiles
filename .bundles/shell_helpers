@@ -3,7 +3,8 @@
 alias cld='cd;clear'
 alias atree='tree -a -I ".git"'
 alias ta='tmux attach -d'
-alias v=vim
+alias v=nvim
+alias vim=nvim
 alias l='ls -la'
 alias a=rg
 
