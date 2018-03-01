@@ -65,6 +65,8 @@ set listchars=tab:▸\
 set ttyfast
 " Redraw less often
 set lazyredraw
+" Disable neovim cursor styling
+set guicursor=
 " }}}
 " Input {{{
 """"
