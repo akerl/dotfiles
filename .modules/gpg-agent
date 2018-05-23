@@ -3,11 +3,12 @@ if [ "$(uname)" != "Darwin" ]; then return ; fi
 
 PINENTRY=/usr/local/MacGPG2/libexec/pinentry-mac.app/Contents/MacOS/pinentry-mac
 
-/usr/bin/env gpg-agent --daemon --pinentry-program "$PINENTRY" &> /dev/null
-
-export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
+function start_gpg_agent () {
+	/usr/bin/env gpg-agent --daemon --pinentry-program "$PINENTRY" &> /dev/null
+	export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
+}
 
 function kgpg () {
     ps aux | awk '/[g]pg-agent --daemon/ {print $2}' | xargs kill -9
-    [[ -e ~/.bundles/gpg-agent ]] && source ~/.bundles/gpg-agent
+    start_gpg_agent
 }
