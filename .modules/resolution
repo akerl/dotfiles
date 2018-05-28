@@ -1,0 +1,12 @@
+if [ "$(uname)" != "Darwin" ]; then return ; fi
+
+function set_resolution () {
+    (
+        RESOLUTION_FILE=~/.iterm_profiles/current
+        if [ -e $RESOLUTION_FILE ]; then
+            echo -ne "\033]50;SetProfile=$(cat $RESOLUTION_FILE)\a"
+        fi
+    )
+}
+
+set_resolution
