@@ -9,4 +9,5 @@ function set_resolution () {
     )
 }
 
-set_resolution
+alias sr=set_resolution
+sr
