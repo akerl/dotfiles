@@ -18,6 +18,7 @@ execute pathogen#infect()
 " Display {{{
 syntax on
 set background=dark
+let g:solarized_termtrans=1
 colorscheme solarized
 
 " Show column at 80 character mark if vim is new enough
@@ -38,6 +39,9 @@ inoremap <F3> <C-O>:set relativenumber! relativenumber?<cr>
 " show tab characters as '▸ '
 set list
 set listchars=tab:▸\
+
+" Disable neovim cursor styling
+set guicursor=
 " }}}
 " Indentation {{{
 " tabstop is the number of spaces a tab counts for
