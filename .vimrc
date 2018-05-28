@@ -38,7 +38,7 @@ inoremap <F3> <C-O>:set relativenumber! relativenumber?<cr>
 
 " show tab characters as '▸ '
 set list
-set listchars=tab:▸\
+set listchars=tab:▸\ 
 
 " Disable neovim cursor styling
 set guicursor=
