@@ -78,13 +78,6 @@ nnoremap <leader>z za
 set modelines=5
 " Enable filetype-based display
 filetype plugin indent on
-" Use markdown for .md files
-autocmd BufRead,BufNewFile *.md set filetype=markdown
-" Use ruby for .prospectus files
-autocmd BufRead,BufNewFile .prospectus set filetype=ruby
-autocmd BufRead,BufNewFile **/.prospectus.d/* set filetype=ruby
-" Use ledger for .ldg files
-autocmd BufRead,BufNewFile *.ldg set filetype=ledger | compiler ledger
 " }}}
 " Searching {{{
 """"
