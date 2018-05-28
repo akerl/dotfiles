@@ -16,3 +16,24 @@
 [submodule ".vim/bundle/DetectIndent"]
 	path = .vim/bundle/DetectIndent
 	url = https://github.com/vim-scripts/DetectIndent
+[submodule ".vim/bundle/nginx.vim"]
+	path = .vim/bundle/nginx.vim
+	url = https://github.com/chr4/nginx.vim
+[submodule ".vim/bundle/vim-puppet"]
+	path = .vim/bundle/vim-puppet
+	url = https://github.com/rodjek/vim-puppet
+[submodule ".vim/bundle/vim-ledger"]
+	path = .vim/bundle/vim-ledger
+	url = https://github.com/ledger/vim-ledger
+[submodule ".vim/bundle/vim-dockerfile"]
+	path = .vim/bundle/vim-dockerfile
+	url = https://github.com/akerl/vim-dockerfile
+[submodule ".vim/bundle/vim-terraform"]
+	path = .vim/bundle/vim-terraform
+	url = https://github.com/hashivim/vim-terraform
+[submodule ".vim/bundle/vim-go"]
+	path = .vim/bundle/vim-go
+	url = https://github.com/fatih/vim-go
+[submodule ".vim/bundle/vim-ruby"]
+	path = .vim/bundle/vim-ruby
+	url = https://github.com/vim-ruby/vim-ruby

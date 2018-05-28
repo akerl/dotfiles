@@ -1,1 +1,1 @@
-autocmd BufRead,BufNewFile *.ldg setfiletype=ledger
+autocmd BufRead,BufNewFile *.ldg set filetype=ledger

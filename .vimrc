@@ -10,6 +10,8 @@ nnoremap <F2> :set invpaste paste?<cr>
 set pastetoggle=<F2>
 " Backspace should delete indents and linewrap
 set backspace=indent,eol,start
+" Set edit history larger than the default
+set history=1000
 " }}}
 " Plugins {{{
 runtime bundle/vim-pathogen/autoload/pathogen.vim
@@ -38,10 +40,13 @@ inoremap <F3> <C-O>:set relativenumber! relativenumber?<cr>
 
 " show tab characters as '▸ '
 set list
-set listchars=tab:▸\ 
+set listchars=tab:▸\ ,trail:-,extends:>,precedes:<,nbsp:+
 
 " Disable neovim cursor styling
 set guicursor=
+
+" Delete comment character when joining commented lines
+set formatoptions+=j
 " }}}
 " Indentation {{{
 " tabstop is the number of spaces a tab counts for
@@ -100,5 +105,11 @@ autocmd BufReadPost * :DetectIndent
 let g:detectindent_preferred_expandtab = 1
 let g:detectindent_preferred_indent = 4
 " }}}
-
-" vim:foldmethod=marker:foldlevel=1
+" Terraform {{{
+" Automatically format on save
+let g:terraform_fmt_on_save=1
+" }}}
+" Go {{{
+let g:go_template_autocreate = 0
+" }}}
+" vim:foldmethod=marker:foldlevel=0
