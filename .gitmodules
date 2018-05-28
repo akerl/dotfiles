@@ -13,3 +13,6 @@
 [submodule ".vim/bundle/vim-colors-solarized"]
 	path = .vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized
+[submodule ".vim/bundle/DetectIndent"]
+	path = .vim/bundle/DetectIndent
+	url = https://github.com/vim-scripts/DetectIndent
