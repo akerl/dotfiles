@@ -99,12 +99,6 @@ set hlsearch
 " Hotkey to turn off persistent highlighting
 nnoremap <leader>h :nohlsearch<CR>
 " }}}
-" DetectIndent {{{
-" Detect indentation for tabs vs spaces
-autocmd BufReadPost * :DetectIndent
-let g:detectindent_preferred_expandtab = 1
-let g:detectindent_preferred_indent = 4
-" }}}
 " Terraform {{{
 " Automatically format on save
 let g:terraform_fmt_on_save=1

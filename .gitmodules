@@ -34,6 +34,3 @@
 [submodule ".vim/bundle/vim-ruby"]
 	path = .vim/bundle/vim-ruby
 	url = https://github.com/vim-ruby/vim-ruby
-[submodule ".vim/bundle/detectindent"]
-	path = .vim/bundle/detectindent
-	url = https://github.com/ciaranm/detectindent
