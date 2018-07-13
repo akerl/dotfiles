@@ -26,6 +26,13 @@ alias nt="tag_release y && gtp"
 alias ds="dep_sync && gc -am 'update deps' && gp"
 alias cs="sha256sum"
 
+function ccs () {
+    (
+        cd ~/src/halyard/homebrew-casks
+        cask_checksum.sh "$1"
+    )
+}
+
 ## Disable homebrew emoji and analytics
 
 export HOMEBREW_NO_ANALYTICS=1
