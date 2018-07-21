@@ -106,4 +106,8 @@ let g:terraform_fmt_on_save=1
 " Go {{{
 let g:go_template_autocreate = 0
 " }}}
+" Airline {{{
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
+" }}}
 " vim:foldmethod=marker:foldlevel=0
