@@ -26,6 +26,8 @@ alias nt="tag_release y && gtp"
 alias ds="dep_sync && gc -am 'update deps' && gp"
 alias cs="sha256sum"
 
+alias sra='spaarti && rs && allprop'
+
 function ccs () {
     (
         cd ~/src/halyard/homebrew-casks
