@@ -105,6 +105,9 @@ let g:terraform_fmt_on_save=1
 " }}}
 " Go {{{
 let g:go_template_autocreate = 0
+let g:go_fmt_options = {
+    'gofmt': '-s',
+}
 " }}}
 " Airline {{{
 let g:airline_theme='solarized'
