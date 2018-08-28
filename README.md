@@ -1,3 +1,3 @@
-[![Build Status](https://img.shields.io/circleci/project/akerl/dotfiles/master.svg)](https://circleci.com/gh/akerl/dotfiles)
+[![Build Status](https://img.shields.io/travis/com/akerl/dotfiles.svg)](https://travis-ci.com/akerl/dotfiles)
 
 My dotfiles. Most are mostly stolen from the world. Feel free to steal them from me.
