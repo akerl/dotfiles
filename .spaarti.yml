@@ -6,5 +6,6 @@ quiet: true
 exclude:
   full_name:
   - ^[pt]
+  - ^mlo
   name:
   - ^draft-
