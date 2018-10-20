@@ -1,1 +1,5 @@
+export SCRATCH_BUCKET=akerl-scratch
+export SCRATCH_HOSTNAME=https://scratch.scrtybybscrty.org
+
 alias s3=scratch_s3_upload
+alias s3p=scratch_s3_prune
