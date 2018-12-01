@@ -1,0 +1,17 @@
+if [ "$(hostname)" != "codepad" ]; then return ; fi
+
+alias rs="(cd ~/src && repo_sync)"
+alias nt="tag_release y && gtp"
+alias ds="dep_sync && gc -am 'update deps' && gp"
+alias cs="sha256sum"
+
+alias sra='spaarti && rs && allprop 2>&1 | tee ~/.allprop_results'
+alias rap='vim ~/.allprop_results'
+
+function ccs () {
+    (
+        cd ~/src/halyard/homebrew-casks
+        cask_checksum.sh "$1"
+    )
+}
+
