@@ -5,8 +5,14 @@ alias nt="tag_release y && gtp"
 alias ds="dep_sync && gc -am 'update deps' && gp"
 alias cs="sha256sum"
 
-alias sra='spaarti && rs && allprop 2>&1 | tee ~/.allprop_results'
-alias rap='vim ~/.allprop_results'
+export ALLPROP_CACHE=~/.allprop_results
+alias rap="vim $ALLPROP_CACHE"
+
+function sra () {
+    local tmp_file="$(mktemp)"
+    (spaarti && rs && allprop) 2>&1 | tee "$tmp_file"
+    mv "$tmp_file" "${ALLPROP_CACHE}"
+}
 
 function ccs () {
     (
