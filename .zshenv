@@ -19,7 +19,7 @@ function _build_path() {
         done
         PATH="$HOME/.bin:$gnu_path:$GO_PATH:$RUBY_PATH:$BREW_PATHS:$LOCAL_PATHS:$ALL_BIN_PATHS"
     elif [ -e /etc/arch-release ] ; then
-        PATH="$HOME/.bin:$GO_PATH:$RUBY_PATH:$LOCAL_PATHS:/usr/bin:/usr/bin/core_perl"
+        PATH="$HOME/.bin:$GO_PATH:$RUBY_PATH:$HOME/.brew/bin:$LOCAL_PATHS:/usr/bin:/usr/bin/core_perl"
     else
         echo "Setting path but I don't recognize this OS" >&2
         PATH="$HOME/.bin:$GO_PATH:$RUBY_PATH:$LOCAL_PATHS:$ALL_BIN_PATHS"
