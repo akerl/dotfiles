@@ -1,12 +1,13 @@
 if [ "$(hostname)" != "codepad" ]; then return ; fi
 
+export REPO_SYNC_WORKERS=5
+
 alias rs="(cd ~/src && repo_sync)"
 alias nt="tag_release y && gtp"
 alias ds="dep_sync && gc -am 'update deps' && gp"
 alias cs="sha256sum"
 
 export ALLPROP_CACHE=~/.allprop_results
-alias rap="vim $ALLPROP_CACHE"
 
 function sra () {
     local tmp_file="$(mktemp)"
