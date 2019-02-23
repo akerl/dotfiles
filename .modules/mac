@@ -35,6 +35,13 @@ function ccs () {
     )
 }
 
+function fcs () {
+    (
+        cd ~/src/halyard/homebrew-core
+        brew fetch "./Formula/$1.rb"
+    )
+}
+
 ## Disable homebrew emoji and analytics
 
 export HOMEBREW_NO_ANALYTICS=1
