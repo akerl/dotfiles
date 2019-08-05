@@ -1,16 +1,22 @@
 {
-  "version": 1,
-  "created": "2018-05-07T11:00:21.010888355-04:00",
+  "version": 2,
+  "created": "2019-08-05T00:00:00.000000000-04:00",
   "accounts": [
     {
       "account": "764218738161",
       "region": "us-east-1",
       "source": "personal",
-      "roles": {
-        "admin": {
-          "mfa": true
+      "roles": [
+        {
+          "name": "admin",
+          "mfa": true,
+          "sources": [
+            {
+              "path": "personal"
+            }
+          ]
         }
-      },
+      ],
       "tags": {
         "name": "personal",
         "region": "us-east-1"
