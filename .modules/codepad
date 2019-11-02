@@ -33,3 +33,8 @@ function ssh-reagent () {
     done
     echo "Cannot find ssh agent - maybe you should reconnect and forward it?"
 }
+
+function prune () {
+    docker system prune -f -a
+    pacman -Sc --noconfirm
+}
