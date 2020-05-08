@@ -1,3 +1,5 @@
 # Set golang environment variables
 
 export GOPATH="$HOME/.go"
+export GOSUMDB=off
+export GOPROXY=direct
