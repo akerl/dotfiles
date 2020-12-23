@@ -1,5 +1,6 @@
 " General {{{
 set nocompatible " leave the past behind
+filetype off                  " required
 " Leader as space
 let mapleader = "\<Space>"
 " Shortcuts for write/quit
@@ -14,8 +15,20 @@ set backspace=indent,eol,start
 set history=1000
 " }}}
 " Plugins {{{
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'chr4/nginx.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'ekalinin/vim-dockerfile'
+Plugin 'fatih/vim-go'
+Plugin 'ledger/vim-ledger'
+Plugin 'rodjek/vim-puppet'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'hashivim/vim-terraform'
+call vundle#end()            " required
 " }}}
 " Display {{{
 syntax on

@@ -7,36 +7,6 @@
 [submodule ".pure"]
 	path = .pure
 	url = https://github.com/akerl/pure
-[submodule ".vim/bundle/vim-pathogen"]
-	path = .vim/bundle/vim-pathogen
-	url = https://github.com/tpope/vim-pathogen
-[submodule ".vim/bundle/vim-colors-solarized"]
-	path = .vim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized
-[submodule ".vim/bundle/nginx.vim"]
-	path = .vim/bundle/nginx.vim
-	url = https://github.com/chr4/nginx.vim
-[submodule ".vim/bundle/vim-puppet"]
-	path = .vim/bundle/vim-puppet
-	url = https://github.com/rodjek/vim-puppet
-[submodule ".vim/bundle/vim-ledger"]
-	path = .vim/bundle/vim-ledger
-	url = https://github.com/ledger/vim-ledger
-[submodule ".vim/bundle/vim-dockerfile"]
-	path = .vim/bundle/vim-dockerfile
-	url = https://github.com/akerl/vim-dockerfile
-[submodule ".vim/bundle/vim-terraform"]
-	path = .vim/bundle/vim-terraform
-	url = https://github.com/hashivim/vim-terraform
-[submodule ".vim/bundle/vim-go"]
-	path = .vim/bundle/vim-go
-	url = https://github.com/fatih/vim-go
-[submodule ".vim/bundle/vim-ruby"]
-	path = .vim/bundle/vim-ruby
-	url = https://github.com/vim-ruby/vim-ruby
-[submodule ".vim/bundle/vim-airline"]
-	path = .vim/bundle/vim-airline
-	url = https://github.com/vim-airline/vim-airline
-[submodule ".vim/bundle/vim-airline-themes"]
-	path = .vim/bundle/vim-airline-themes
-	url = https://github.com/vim-airline/vim-airline-themes
+[submodule ".vim/bundle/Vundle.vim"]
+	path = .vim/bundle/Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim.git
