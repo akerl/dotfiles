@@ -2,5 +2,4 @@
 --strict
 --pedantic
 --explicit
---check-payees
 --pager less +G
