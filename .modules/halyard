@@ -1,0 +1,10 @@
+if [ ! -e ~/src/halyard/halyard ] ; then return ; fi
+
+function he () {
+    (
+        cd ~/src/halyard/halyard/data/mac
+        mac="$(grep "hostname::hostname: $1" *.yaml | sed 's|.yaml:.* | |' | pick | awk '{print $1}')"
+        vim "${mac}.yaml"
+    )
+}
+
