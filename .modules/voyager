@@ -1,3 +1,5 @@
 alias vt='voyager travel --prompt fuzzy $EXTRA_VOYAGER_FLAGS'
 
 alias evt='eval $(vt)'
+
+alias yy='eval $(vt -y)'
