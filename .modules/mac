@@ -49,3 +49,6 @@ export HOMEBREW_NO_EMOJI=1
 
 # Fix fork bug in Ruby on High Sierra
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
+ssh-agent -a ~/.agent-ssh &>/dev/null
+export SSH_AUTH_SOCK=~/.agent-ssh
