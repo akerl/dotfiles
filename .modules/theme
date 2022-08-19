@@ -1,3 +1,5 @@
 autoload -U promptinit; promptinit
 prompt pure
 
+zstyle ':prompt:pure:prompt:success' color white
+zstyle ':prompt:pure:prompt:error' color red
