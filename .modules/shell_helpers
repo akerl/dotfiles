@@ -8,17 +8,5 @@ alias vim=nvim
 alias l='ls -la'
 alias a=rg
 
-alias map="xargs -n1"
-alias mapp="xargs -n1 -I{}"
-
-function ff () {
-    local filename="$1"
-    shift 1
-    find . -name "$filename" | xargs grep $@
-}
-
 alias ddd='~/.../... update && ~/.../... install'
 
-alias ssl_doc="ruby ~/.tools/ssl-tools/doctor.rb"
-
-alias p=pomodoro

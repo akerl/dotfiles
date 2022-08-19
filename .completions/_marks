@@ -1,4 +1,0 @@
-#compdef jump unmark j um
-
-_describe 'marks' "($(lsmarks | awk '{print $1 ":" $3}'))"
-

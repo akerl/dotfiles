@@ -10,45 +10,10 @@ fpath=(~/.autoload ~/.completions $basepath/zsh-completions $basepath/zsh/functi
 alias sha512sum='shasum -a 512'
 alias sha256sum='shasum -a 256'
 
-alias vgpg="GNUPGHOME=/Volumes/akerl-vault/gnupg gpg"
-alias keybase='GNUPGHOME=/Volumes/akerl-vault/gnupg keybase --standalone'
-
-alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
-
-alias issueurl="open 'https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+user%3Aakerl+user%3Aamylum+user%3Adock0+user%3Ahalyard'"
-alias giu=issueurl
-alias gil=issuelist
-
-alias cask="brew cask"
-
-alias rs="(cd ~/src && repo_sync)"
-alias nt="tag_release y && gtp"
-alias ds="dep_sync && gc -am 'update deps' && gp"
-alias cs="sha256sum"
-
-alias sra='spaarti && rs && allprop'
-
-function ccs () {
-    (
-        cd ~/src/halyard/homebrew-casks
-        cask_checksum.sh "$1"
-    )
-}
-
-function fcs () {
-    (
-        cd ~/src/halyard/homebrew-core
-        brew fetch "./Formula/$1.rb"
-    )
-}
-
 ## Disable homebrew emoji and analytics
 
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_EMOJI=1
-
-# Fix fork bug in Ruby on High Sierra
-export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
 ssh-agent -a ~/.agent-ssh &>/dev/null
 export SSH_AUTH_SOCK=~/.agent-ssh

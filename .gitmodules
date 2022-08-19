@@ -1,9 +1,6 @@
 [submodule ".bin"]
 	path = .bin
 	url = https://github.com/akerl/scripts
-[submodule ".tools/ssl-tools"]
-	path = .tools/ssl-tools
-	url = https://github.com/mislav/ssl-tools
 [submodule ".pure"]
 	path = .pure
 	url = https://github.com/akerl/pure

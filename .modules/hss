@@ -1,9 +1,0 @@
-# Configure hss aliases
-
-alias c=hss
-alias ccp='scp -S hss'
-
-# Set fallback to ssh
-
-export HSS_PASS='ssh'
-

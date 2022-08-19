@@ -6,10 +6,6 @@ alias ls='ls --color=auto'
 eval `dircolors -b`
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-## Linux-specific aliases
-
-alias s='systemctl'
-
 ## Set fpath for completions
 
 fpath=(~/.autoload ~/.completions $fpath)
