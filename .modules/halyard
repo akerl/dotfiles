@@ -1,10 +1,47 @@
 if [ ! -e ~/src/halyard/halyard ] ; then return ; fi
 
-function he () {
+function halyard_host_list () {
     (
         cd ~/src/halyard/halyard/data/mac
-        mac="$(grep "hostname::hostname: $1" *.yaml | sed 's|.yaml:.* | |' | fzf -1 | awk '{print $1}')"
-        vim "${mac}.yaml"
+        grep 'hostname::hostname: ' *.yaml | sed 's/.yaml:.* / /'
     )
 }
 
+function he () {
+    mac="$(halyard_host_list | fzf -1 -0 -q "$1" | awk '{print $1}')"
+    if [[ -z "$mac" ]] ; then
+        echo 'No match found'
+    else
+        vim ~/src/halyard/halyard/data/mac/${mac}.yaml
+    fi
+}
+
+function halyard_hostname_pick () {
+    match="$(halyard_host_list | fzf -1 -0 -q "$1")"
+    if [[ -z "$match" ]] ; then
+        echo 'No match found'
+    else
+        host="${match#* }"
+        mac="${match% *}"
+        domain="$(awk '/hostname::domain: / {print $NF}' ~/src/halyard/halyard/data/mac/${mac}.yaml)"
+        echo "${host}.${domain}"
+    fi
+}
+
+function halyard_host_ssh () {
+    host="$(halyard_hostname_pick $1)"
+    user="${2:-akerl}"
+    if [[ "$host" == "No match found"] ]] ; then
+        echo 'No match found'
+    else
+        ssh "${user}@${host}"
+    fi
+}
+
+function h () {
+    halyard_host_ssh $1
+}
+
+function hr () {
+    halyard_host_ssh $1 root
+}
