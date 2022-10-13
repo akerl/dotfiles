@@ -29,19 +29,20 @@ function halyard_hostname_pick () {
 }
 
 function halyard_host_ssh () {
-    host="$(halyard_hostname_pick $1)"
-    user="${2:-akerl}"
+    host="$(halyard_hostname_pick $1)" ; shift
+    user="${1}" ; shift
     if [[ "$host" == "No match found"] ]] ; then
         echo 'No match found'
     else
-        ssh "${user}@${host}"
+        ssh "${user}@${host}" $@
     fi
 }
 
 function h () {
-    halyard_host_ssh $1
+    pattern="${1}" ; shift
+    halyard_host_ssh $pattern akerl $@
 }
 
 function hr () {
-    halyard_host_ssh $1 root
+    halyard_host_ssh $pattern root $@
 }
