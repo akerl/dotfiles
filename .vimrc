@@ -15,20 +15,18 @@ set backspace=indent,eol,start
 set history=1000
 " }}}
 " Plugins {{{
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'chr4/nginx.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'fatih/vim-go'
-Plugin 'ledger/vim-ledger'
-Plugin 'rodjek/vim-puppet'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'hashivim/vim-terraform'
-call vundle#end()            " required
+call plug#begin()
+Plug 'chr4/nginx.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'altercation/vim-colors-solarized'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'fatih/vim-go'
+Plug 'ledger/vim-ledger'
+Plug 'rodjek/vim-puppet'
+Plug 'vim-ruby/vim-ruby'
+Plug 'hashivim/vim-terraform'
+call plug#end()
 " }}}
 " Display {{{
 syntax on

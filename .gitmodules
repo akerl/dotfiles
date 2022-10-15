@@ -4,6 +4,6 @@
 [submodule ".pure"]
 	path = .pure
 	url = https://github.com/akerl/pure
-[submodule ".vim/bundle/Vundle.vim"]
-	path = .vim/bundle/Vundle.vim
-	url = https://github.com/VundleVim/Vundle.vim.git
+[submodule ".vim/vim-plug"]
+	path = .vim/vim-plug
+	url = https://github.com/junegunn/vim-plug
