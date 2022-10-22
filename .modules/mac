@@ -17,6 +17,6 @@ export HOMEBREW_NO_EMOJI=1
 
 ssh-agent -a ~/.agent-ssh &>/dev/null
 export SSH_AUTH_SOCK=~/.agent-ssh
-[[ -f ~/.ssh/id_ed25519_sk ]] && ssh-add ~/.ssh/id_ed25519_sk
-[[ -f ~/.ssh/id_rsa ]] && ssh-add ~/.ssh/id_rsa
+[[ -f ~/.ssh/id_ed25519_sk ]] && ssh-add -q ~/.ssh/id_ed25519_sk
+[[ -f ~/.ssh/id_rsa ]] && ssh-add -q ~/.ssh/id_rsa
 
