@@ -6,7 +6,7 @@ quiet: true
 formats:
   - match: -archived/
     path: trash/%<full_name>s
-  - path: %<full_name>s
+  - path: '%<full_name>s'
 exclude:
   full_name:
   - ^[pt]
