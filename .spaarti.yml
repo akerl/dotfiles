@@ -9,7 +9,4 @@ formats:
   - path: '%<full_name>s'
 exclude:
   full_name:
-  - ^[pt]
-  - ^mlo
-  name:
-  - ^draft-
+    - ^[mpt]
