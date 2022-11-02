@@ -44,5 +44,6 @@ function h () {
 }
 
 function hr () {
+    pattern="${1}" ; shift
     halyard_host_ssh $pattern root $@
 }
