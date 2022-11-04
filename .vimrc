@@ -13,6 +13,8 @@ set pastetoggle=<F2>
 set backspace=indent,eol,start
 " Set edit history larger than the default
 set history=1000
+" disable the damn mouse
+set mouse=
 " }}}
 " Plugins {{{
 call plug#begin()
