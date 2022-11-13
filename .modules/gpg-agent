@@ -9,8 +9,3 @@ function kgpg () {
     ps aux | awk '/[g]pg-agent --daemon/ {print $2}' | xargs kill -9
     start_gpg_agent
 }
-
-if type gpgconf > /dev/null; then
-    start_gpg_agent
-fi
-
