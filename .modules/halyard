@@ -49,3 +49,5 @@ function hr () {
     if [[ -n "$pattern" ]] ; shift
     halyard_host_ssh "$pattern" root $@
 }
+
+alias hc=~/src/halyard/halyard/ansible/run_all
