@@ -1,2 +1,4 @@
 sources:
   - url: https://github.com/akerl/dotfiles
+    ignore:
+      - ^README.md$
