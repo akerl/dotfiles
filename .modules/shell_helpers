@@ -8,5 +8,5 @@ alias vim=nvim
 alias l='ls -la'
 alias a=rg
 
-alias ddd='~/.../... update && ~/.../... install'
+alias ddd='smoosh update'
 
