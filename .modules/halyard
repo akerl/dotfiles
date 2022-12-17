@@ -30,7 +30,8 @@ function halyard_hostname_pick () {
 
 function halyard_host_ssh () {
     host="$(halyard_hostname_pick $1)" ; shift
-    user="${1}" ; shift
+    user="${1}"
+    if [[ -n "$user" ]] ; shift
     if [[ "$host" == "No match found"] ]] ; then
         echo 'No match found'
     else
