@@ -1,15 +1,8 @@
-export OATH_DEVICE=13796276
-
 function mfa () {
     local arg="$1"
     [[ -z "$arg" ]] && echo 'Usage: mfa NAME_OF_TOKEN' && return
-    code="$(ykman --device "$OATH_DEVICE" oath accounts code "$arg" | awk '/ [0-9]+/ {print $2}')"
+    code="$(yubiotp code $arg)"
     [[ -z "$code" ]] && echo 'Code not found' && return
     echo "$code" | pbcopy
     echo "$code"
-}
-
-function cache_mfa () {
-    mkdir -p ~/.cache/mfa
-    ykman --device "$OATH_DEVICE" oath accounts list > ~/.cache/mfa/list
 }
