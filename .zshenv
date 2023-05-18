@@ -8,14 +8,19 @@ function _build_path() {
     local SBIN_PATHS='/usr/sbin:/sbin'
     local BIN_PATHS='/usr/bin:/bin'
     local ALL_BIN_PATHS="$SBIN_PATHS:$BIN_PATHS"
-    local BREW_PATHS='/opt/brew/bin:/opt/brew/sbin'
+    if [ -e /opt/brew/bin ] ; then
+        local BREW_PREFIX='/opt/brew'
+    else
+        local BREW_PREFIX='/opt/homebrew'
+    fi
+    local BREW_PATHS="$BREW_PREFIX/bin:$BREW_PREFIX/sbin"
     local RUBY_PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims"
     local GO_PATH="$HOME/.go/bin"
 
     if [ "$($uname)" = "Darwin" ] ; then
         local gnu_path=''
         for pkg in coreutils gnu-tar gnu-sed ; do
-            gnu_path="$gnu_path:/opt/brew/opt/$pkg/libexec/gnubin"
+            gnu_path="$gnu_path:$BREW_PREFIX/opt/$pkg/libexec/gnubin"
         done
         PATH="$HOME/.bin:$gnu_path:$GO_PATH:$RUBY_PATH:$BREW_PATHS:$LOCAL_PATHS:$ALL_BIN_PATHS"
     elif [ -e /etc/arch-release ] ; then
