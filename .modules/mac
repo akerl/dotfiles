@@ -18,8 +18,10 @@ export HOMEBREW_NO_ENV_HINTS=1
 
 alias bt='blueutil --connect 60-ab-d2-26-c3-4c'
 
-ssh-agent -a ~/.agent-ssh &>/dev/null
 export SSH_AUTH_SOCK=~/.agent-ssh
-[[ -f ~/.ssh/id_ed25519_sk ]] && ssh-add -q ~/.ssh/id_ed25519_sk 2>/dev/null
-[[ -f ~/.ssh/id_rsa ]] && ssh-add -q ~/.ssh/id_rsa 2>/dev/null
-
+ssh-add -l &>/dev/null
+if [[ "$?" == "2" ]] ; then
+    rm -rf "$SSH_AUTH_SOCK"
+    ssh-agent -a "$SSH_AUTH_SOCK" &>/dev/null
+fi
+ssh-add &>/dev/null
