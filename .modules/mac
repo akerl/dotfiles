@@ -10,12 +10,6 @@ fpath=(~/.autoload ~/.completions $basepath/zsh-completions $basepath/zsh/functi
 alias sha512sum='shasum -a 512'
 alias sha256sum='shasum -a 256'
 
-## Disable homebrew emoji and analytics
-
-export HOMEBREW_NO_ANALYTICS=1
-export HOMEBREW_NO_EMOJI=1
-export HOMEBREW_NO_ENV_HINTS=1
-
 alias bt='blueutil --connect 60-ab-d2-26-c3-4c'
 
 export SSH_AUTH_SOCK=~/.agent-ssh
