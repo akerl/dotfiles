@@ -5,6 +5,10 @@ if [ "$(uname)" != "Darwin" ]; then return ; fi
 basepath="$(dirname $(which zsh))/../share"
 fpath=(~/.autoload ~/.completions $basepath/zsh-completions $basepath/zsh/functions $basepath/zsh/site-functions)
 
+## Homebrew config
+
+export HOMEBREW_NO_INSTALL_FROM_API=1
+
 ## Mac-specific aliases
 
 alias sha512sum='shasum -a 512'
