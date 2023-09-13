@@ -52,3 +52,10 @@ function hr () {
 }
 
 alias hc=~/src/halyard/halyard/ansible/run_all
+
+function hco () {
+    (
+        export ONELINE=1
+        ~/src/halyard/halyard/ansible/run_all $@
+    )
+}
