@@ -31,5 +31,3 @@ function _build_path() {
     fi
     export PATH
 }
-
-_build_path

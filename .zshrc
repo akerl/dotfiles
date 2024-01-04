@@ -1,3 +1,5 @@
+_build_path
+
 for mod in ~/.modules/* ; do
     source "$mod"
 done
