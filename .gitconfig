@@ -1,23 +1,41 @@
 [core]
-    pager = diff-so-fancy | less --tabs=4 -RFX
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
 
 [alias]
     patch = !git --no-pager diff --no-color
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
 
 [commit]
     template = ~/.gitmessage
 
 [diff]
+    algorithm = histogram
     indentHeuristic = true
+    colorMoved = default
+    submodule = log
 
 [help]
     autocorrect = 1
 
 [merge]
     ff = only
+    conflictstyle = zdiff3
+
+[rebase]
+    autostash = true
+    autosquash = true
 
 [push]
     default = current
+
+[submodule]
+    recurse = true
 
 [status]
     submoduleSummary = true
@@ -46,7 +64,8 @@
 [versionsort]
     prereleaseSuffix = -rc
 
+[init]
+    defaultBranch = main
+
 [include]
     path = ~/.gitconfig.d/local
-[init]
-	defaultBranch = main
