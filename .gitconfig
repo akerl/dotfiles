@@ -15,10 +15,20 @@
 [commit]
     template = ~/.gitmessage
 
+[branch]
+    sort = committerdate
+
+[tag]
+    sort = version:refname
+
 [diff]
     algorithm = histogram
     indentHeuristic = true
-    colorMoved = default
+    colorMoved = plain
+    mnemonicPrefix = true
+    renameplain
+    mnemonicPrefix = true
+    renames = true
     submodule = log
 
 [help]
