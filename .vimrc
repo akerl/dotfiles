@@ -18,7 +18,7 @@ call plug#begin()
 Plug 'chr4/nginx.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'altercation/vim-colors-solarized'
+Plug 'Tsuzat/NeoSolarized.nvim'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'fatih/vim-go'
 Plug 'ledger/vim-ledger'
@@ -29,9 +29,7 @@ call plug#end()
 " }}}
 " Display {{{
 syntax on
-set background=dark
-let g:solarized_termtrans=1
-colorscheme solarized
+colorscheme NeoSolarized
 
 " Show column at 80 character mark if vim is new enough
 if exists('+colorcolumn')
