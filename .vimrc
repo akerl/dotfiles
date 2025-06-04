@@ -6,9 +6,6 @@ let mapleader = "\<Space>"
 " Shortcuts for write/quit
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :x<CR>
-" Toggle paste with F2
-nnoremap <F2> :set invpaste paste?<cr>
-set pastetoggle=<F2>
 " Backspace should delete indents and linewrap
 set backspace=indent,eol,start
 " Set edit history larger than the default
