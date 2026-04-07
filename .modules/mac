@@ -8,6 +8,7 @@ fpath=(~/.autoload ~/.completions $basepath/zsh-completions $basepath/zsh/functi
 ## Homebrew config
 
 export HOMEBREW_NO_INSTALL_FROM_API=1
+export HOMEBREW_NO_ENV_HINTS=1
 
 ## Mac-specific aliases
 
