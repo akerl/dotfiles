@@ -55,7 +55,14 @@ alias hc=~/src/halyard/halyard/ansible/run_all
 
 function hco () {
     (
-        export ONELINE=1
+        export ANSIBLE_STDOUT_CALLBACK=short
+        ~/src/halyard/halyard/ansible/run_all $@
+    )
+}
+
+function hcj () {
+    (
+        export ANSIBLE_STDOUT_CALLBACK=ansible.posix.json
         ~/src/halyard/halyard/ansible/run_all $@
     )
 }
