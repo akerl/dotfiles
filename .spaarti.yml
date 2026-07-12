@@ -9,3 +9,4 @@ formats:
 exclude:
   full_name:
     - ^[mpt]
+    - ^hackerpants
