@@ -8,5 +8,5 @@ formats:
   - path: '%<full_name>s'
 exclude:
   full_name:
-    - ^[mpt]
+    - ^[mpty]
     - ^hackerpants
