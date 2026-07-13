@@ -13,4 +13,6 @@ alias gpr='git pull --rebase'
 alias gtp='git push --tags'
 alias gdc='git diff --cached'
 alias gt='git fetch --tags origin'
-
+if command -v gh ; then
+    alias gpc='gh pr create'
+fi
