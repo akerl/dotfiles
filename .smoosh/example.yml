@@ -3,3 +3,4 @@ sources:
     ignore:
       - ^README.md$
       - ^.github$
+      - ^.github/.*$
