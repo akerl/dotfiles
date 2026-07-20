@@ -15,4 +15,8 @@ alias gdc='git diff --cached'
 alias gt='git fetch --tags origin'
 if command -v gh &>/dev/null ; then
     alias gpc='gh pr create'
+
+    function gm() {
+        gp pr create --label mergewhenready --body '' -t "$1"
+    }
 fi
