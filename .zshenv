@@ -19,8 +19,11 @@ function _build_path() {
 
     if [ "$($uname)" = "Darwin" ] ; then
         local gnu_path=''
-        for pkg in coreutils gnu-tar gnu-sed patch ; do
-            gnu_path="$gnu_path:$BREW_PREFIX/opt/$pkg/libexec/gnubin"
+        for pkg in coreutils gnu-tar gnu-sed gpatch ; do
+            gpath="$BREW_PREFIX/opt/$pkg/libexec/gnubin"
+            if [ -d "$gpath" ] ; then
+                gnu_path="$gnu_path:$BREW_PREFIX/opt/$pkg/libexec/gnubin"
+            fi
         done
         PATH="$HOME/.bin:$gnu_path:$GO_PATH:$RUBY_PATH:$BREW_PATHS:$LOCAL_PATHS:$ALL_BIN_PATHS"
     elif [ -e /etc/arch-release ] ; then
