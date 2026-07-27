@@ -19,7 +19,7 @@ function _build_path() {
 
     if [ "$($uname)" = "Darwin" ] ; then
         local gnu_path=''
-        for pkg in coreutils gnu-tar gnu-sed ; do
+        for pkg in coreutils gnu-tar gnu-sed patch ; do
             gnu_path="$gnu_path:$BREW_PREFIX/opt/$pkg/libexec/gnubin"
         done
         PATH="$HOME/.bin:$gnu_path:$GO_PATH:$RUBY_PATH:$BREW_PATHS:$LOCAL_PATHS:$ALL_BIN_PATHS"
